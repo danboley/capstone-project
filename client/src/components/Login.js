@@ -25,8 +25,8 @@ function Login({ updateUser }) {
           setIsLoading(false);
           if (res.ok) {
             res.json().then((user) => {
-              updateUser(user);
               history.push(`/`);
+              updateUser(user);
             });
           } else {
             res.json().then((err) => setErrors(err.errors));

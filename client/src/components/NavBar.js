@@ -22,6 +22,7 @@ function NavBar({ currentUser, updateUser}) {
   return (
     <div>
         <NavLink to="/"> Home </NavLink>
+        {currentUser ? (<NavLink to="/myactivities"> My Activities </NavLink>) : null}
         {/* <NavLink to="/login"> Login </NavLink> */}
         {/* <NavLink to="/signup"> Signup </NavLink> */}
         {!currentUser ? (<NavLink to="/login"> Log In </NavLink>) :

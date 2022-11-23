@@ -1,15 +1,15 @@
 class FollowsController < ApplicationController
-  def index
-    render json: Follow.all, status: :ok
-  end
+  # def index
+  #   render json: Follow.all, status: :ok
+  # end
 
-  def show
-    render json: find_follow, status: :ok
-  end
+  # def show
+  #   render json: find_follow, status: :ok
+  # end
 
-  private
+  # private
 
-  def find_follow
-    Follow.find(params[:id])
-  end
+  # def find_follow
+  #   Follow.find(params[:id])
+  # end
 end

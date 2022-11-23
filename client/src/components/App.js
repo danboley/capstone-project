@@ -7,14 +7,7 @@ import Login from "./Login";
 function App() {
   const [currentUser, setCurrentUser] = useState(false);
   const [errors, setErrors] = useState(false);
-  const [count, setCount] = useState(0);
   // const [activities, setActivities] = useState([]);
-
-  useEffect(() => {
-    fetch("/hello")
-      .then((r) => r.json())
-      .then((data) => setCount(data.count));
-  }, []);
 
   useEffect(() => {
     fetch("/me")
@@ -30,7 +23,7 @@ function App() {
               setCurrentUser(user);
             });
           } else {
-            res.json().then((data) => setErrors(data.error));
+            res.json().then((data) => console.log(data.error));
           }
         });
       });
@@ -58,7 +51,7 @@ function App() {
             <Login />
           </Route>
           <Route path="/">
-            <h1>Page Count: {count}</h1>
+            <h1>Dashboard/home</h1>
           </Route>
         </Switch>
       </div>
