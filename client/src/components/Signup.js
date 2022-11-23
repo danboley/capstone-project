@@ -45,6 +45,11 @@ function Signup({ updateUser }) {
     });
   }
 
+  function loginPush(e) {
+    e.preventDefault();
+    history.push(`/login`);
+  }
+
   return (
     <div className="signup">
         <form className="signup-form" onSubmit={onSubmit}>
@@ -59,18 +64,20 @@ function Signup({ updateUser }) {
             <label> Location: </label>
             <input type="text" name="location" value={location} onChange={(e) => setLocation(e.target.value)}/>
             <label> Account Type: </label>
-            <select name="subscription" value={firstName} onChange={(e) => setSubscriber(e.target.value)}>
+            <select name="subscription" value={subscriber} onChange={(e) => setSubscriber(e.target.value)}>
                 <option value="">Premium</option>
                 <option value="">Free</option>
             </select>
             <label> Password: </label>
             <input type="text" name="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
             <button type="submit">
-                Create Account
+                Sign Up
             </button>
         </form>
         <label>{isLoading ? "Loading..." : null}</label>
         {errors ? <div className="errors">{errors} </div> : null}
+        <div> Already a Member? </div>
+        <button onClick={loginPush}> Log In </button>
     </div>
   )
 }

@@ -49,11 +49,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <NavBar />
+        <NavBar currentUser={currentUser} updateUser={updateUser}/>
         <Switch>
-          <Route path="/testing">
-            <h1>Test Route</h1>
-          </Route>
           <Route path="/signup" updateUser={updateUser}>
             <Signup />
           </Route>
