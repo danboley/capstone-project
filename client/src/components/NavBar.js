@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, useHistory } from "react-router-dom";
+// import logo from "../pics/logo.png";
 
 function NavBar({ currentUser, updateUser}) {
     const [isLoading, setIsLoading] = useState(false);
@@ -21,13 +22,21 @@ function NavBar({ currentUser, updateUser}) {
 
   return (
     <div>
-        <NavLink to="/"> Home </NavLink>
-        {currentUser ? (<NavLink to="/myactivities"> My Activities </NavLink>) : null}
-        {/* <NavLink to="/login"> Login </NavLink> */}
-        {/* <NavLink to="/signup"> Signup </NavLink> */}
-        {!currentUser ? (<NavLink to="/login"> Log In </NavLink>) :
-        (<NavLink to="/" onClick={handleLogOut}> Log Out </NavLink>)}
-        {isLoading ? "Loading..." : null}
+        {currentUser ?
+	        (<div>
+                {/* <img src={logo} alt="logo"></img> */}
+                <NavLink to="/dashboard" > Dashboard </NavLink>
+                <NavLink to="/myactivities"> My Activities </NavLink>
+                <NavLink to="/" onClick={handleLogOut}> Log Out </NavLink>
+                <NavLink to="/myprofile"> My Profile </NavLink>
+                <NavLink to="/activityform"> + </NavLink>
+            </div>) :
+	        (<div>
+                {/* <img src={logo} alt="logo"></img> */}
+                <NavLink to="/login"> Log In </NavLink>
+            </div>)
+        }
+       {isLoading ? "Loading..." : null}
     </div>
   )
 }

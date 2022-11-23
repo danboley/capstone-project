@@ -25,7 +25,7 @@ function Login({ updateUser }) {
           setIsLoading(false);
           if (res.ok) {
             res.json().then((user) => {
-              history.push(`/`);
+              history.push(`/dashboard`);
               updateUser(user);
             });
           } else {

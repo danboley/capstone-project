@@ -7,7 +7,7 @@ import Login from "./Login";
 function App() {
   const [currentUser, setCurrentUser] = useState(false);
   const [errors, setErrors] = useState(false);
-  // const [activities, setActivities] = useState([]);
+  const [activities, setActivities] = useState([]);
 
   useEffect(() => {
     fetch("/me")
@@ -31,13 +31,13 @@ function App() {
 
   const updateUser = (user) => setCurrentUser(user);
 
-  // useEffect(() => {
-  //   fetch("/activities")
-  //     .then((res) => res.json())
-  //     .then((data) => setActivities(data));
-  // }, []);
+  useEffect(() => {
+    fetch("/activities")
+      .then((res) => res.json())
+      .then((data) => setActivities(data));
+  }, []);
 
-  // console.log(activities)
+  console.log(activities)
 
   return (
     <BrowserRouter>
@@ -50,7 +50,7 @@ function App() {
           <Route path="/login" updateUser={updateUser}>
             <Login />
           </Route>
-          <Route path="/">
+          <Route path="/dashboard">
             <h1>Dashboard/home</h1>
           </Route>
         </Switch>
