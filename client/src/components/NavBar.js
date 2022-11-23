@@ -38,7 +38,7 @@ function NavBar({ currentUser, updateUser}) {
         }
        {isLoading ? "Loading..." : null}
     </div>
-  )
+  );
 }
 
 export default NavBar;

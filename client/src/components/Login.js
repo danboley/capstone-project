@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 function Login({ updateUser }) {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [errors, setErrors] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [errors, setErrors] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     const history = useHistory();
 
@@ -58,7 +58,7 @@ function Login({ updateUser }) {
             Sign Up{" "}
         </button>
     </div>
-  )
+  );
 }
 
 export default Login;

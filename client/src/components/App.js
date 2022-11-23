@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Signup from "./Signup";
 import Login from "./Login";
+import AllActivities from "./AllActivities";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(false);
@@ -37,8 +38,6 @@ function App() {
       .then((data) => setActivities(data));
   }, []);
 
-  console.log(activities)
-
   return (
     <BrowserRouter>
       <div className="App">
@@ -51,7 +50,7 @@ function App() {
             <Login />
           </Route>
           <Route path="/dashboard">
-            <h1>Dashboard/home</h1>
+            <AllActivities activities={activities} />
           </Route>
         </Switch>
       </div>

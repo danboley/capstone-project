@@ -79,7 +79,7 @@ function Signup({ updateUser }) {
         <div> Already a Member? </div>
         <button onClick={loginPush}> Log In </button>
     </div>
-  )
+  );
 }
 
 export default Signup;
