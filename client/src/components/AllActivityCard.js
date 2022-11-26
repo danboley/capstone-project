@@ -1,6 +1,6 @@
 import React from "react";
 
-function AllActivityCard({ activity }) {
+function AllActivityCard({ activity, comments }) {
   console.log(activity);
 
   // function pace(activity) {
@@ -9,8 +9,10 @@ function AllActivityCard({ activity }) {
   //     )
   // }
 
+//   console.log(comments.map((comment) => comment.comment))
+
   return (
-    <div>
+    <div className="pub-activity-card">
       <img src={activity.user.pro_pic}></img>
       <div>
         {activity.user.subscriber}
@@ -20,9 +22,10 @@ function AllActivityCard({ activity }) {
         {activity.user.first_name} {activity.user.last_name}
       </div>
       <div>
-        {activity.date} at {activity.time}
+        {activity.date} at {activity.time} • {activity.location}
       </div>
       <div>{activity.title}</div>
+      <div>{activity.description}</div>
       <div>
         <label>Distance</label>
         {activity.distance} mi
@@ -40,6 +43,9 @@ function AllActivityCard({ activity }) {
             {} /mi
         </div> */}
       <div>{activity.map}</div>
+      
+      {comments?.map((comment) => <div>{comment.comment}</div>)}
+      {/* <div>{activity.comments}</div> */}
     </div>
   );
 }

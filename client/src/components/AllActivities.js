@@ -1,16 +1,13 @@
 import React from 'react';
 import AllActivityCard from './AllActivityCard';
 
-function AllActivities({ activities }) {
-
-// activities.map((activity) => (
-//     <AllActivityCard {...activity} activity={activity} key={activity.id} />
-// ))
+// Dashboard
+function AllActivities({ currentUser, activities }) {
 
   return (
-    <div>
+    <div className="activity-feed">
         AllActivities/Dashboard
-        {activities.map((activity) => (<AllActivityCard {...activity} activity={activity} key={activity.id} />))}
+        {activities.map((activity) => (<AllActivityCard {...activity} activity={activity} comments={activity.comments} key={activity.id} />))}
     </div>
   );
 }

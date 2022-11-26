@@ -28,7 +28,9 @@ function NavBar({ currentUser, updateUser}) {
                 <NavLink to="/dashboard" > Dashboard </NavLink>
                 <NavLink to="/myactivities"> My Activities </NavLink>
                 <NavLink to="/" onClick={handleLogOut}> Log Out </NavLink>
-                <NavLink to="/myprofile"> My Profile </NavLink>
+                <NavLink to="/myprofile"> My Profile 
+                    {/* {currentUser.pro_pic} */}
+                </NavLink>
                 <NavLink to="/activityform"> + </NavLink>
             </div>) :
 	        (<div>
