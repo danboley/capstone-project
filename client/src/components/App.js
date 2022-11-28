@@ -5,6 +5,7 @@ import Signup from "./Signup";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
 import ActivityForm from "./ActivityForm";
+import MyProfile from "./MyProfile";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(false);
@@ -57,8 +58,11 @@ function App() {
           <Route path="/dashboard">
             <Dashboard currentUser={currentUser} activities={activities} />
           </Route>
-          <Route>
-            <ActivityForm currentUser={currentUser}/>
+          <Route path="/myprofile">
+            <MyProfile currentUser={currentUser}/>
+          </Route>
+          <Route path="/activityform">
+            <ActivityForm currentUser={currentUser} addNewActivity={addNewActivity}/>
           </Route>
         </Switch>
       </div>
