@@ -21,6 +21,9 @@ function ActivityForm({ currentUser, addNewActivity }) {
 
     function handleActivitySubmit(e) {
         e.preventDefault();
+        if (activitySport === "") {
+            window.alert("Please select a sport");
+        } else {
         setErrors([]);
         setIsLoading(true);
         fetch(`/activities`, {
@@ -44,13 +47,13 @@ function ActivityForm({ currentUser, addNewActivity }) {
             if (r.ok) {
               r.json().then((data) => {
                 addNewActivity(data);
-                console.log(data);
-                history.push(`/myactivities`);
+                // history.push(`/myactivities/${data.id}`);
               });
             } else {
               r.json().then((err) => setErrors(err.errors));
             }
           });
+        }
     }
 
   return (
@@ -70,6 +73,7 @@ function ActivityForm({ currentUser, addNewActivity }) {
                 </select>
                 <label className="form-label">Sport</label>
                 <select className="form-dropdown" onChange={(e) => {setActivitySport(e.target.value)}}>
+                    <option value="">Sport</option>
                     {sports?.map((sport) => {
                         return(
                         <option key={sport} value={activitySport.text}>{sport}</option>
@@ -80,9 +84,9 @@ function ActivityForm({ currentUser, addNewActivity }) {
                 <input className="form-input" type="date" value={activityDate} onChange={(e) => setActivityDate(e.target.value)}></input>
                 <input type="time" value={activityTime} onChange={(e) => setActivityTime(e.target.value)}></input>
                 <label className="form-label">Title</label>
-                <input className="form-input" type="text" value={activityTitle} onChange={(e) => setActivityTitle(e.target.value)}></input>
+                <input className="form-input" type="text" placeholder="Morning Run" value={activityTitle} onChange={(e) => setActivityTitle(e.target.value)}></input>
                 <label className="form-label">Description</label>
-                <textarea className="form-input" type="textbox" value={activityDescription} onChange={(e) => setActivityDescription(e.target.value)}></textarea>
+                <textarea className="form-input" type="textbox" placeholder="How'd it go? Share more about your activity and use @ to tag someone." value={activityDescription} onChange={(e) => setActivityDescription(e.target.value)}></textarea>
                 <label className="form-label">Location</label>
                 <input className="form-input" type="text" value={activityLocation} onChange={(e) => setActivityLocation(e.target.value)}></input>
                 {/* <label className="form-label">.gpx File</label>

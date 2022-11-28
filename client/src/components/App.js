@@ -6,6 +6,7 @@ import Login from "./Login";
 import Dashboard from "./Dashboard";
 import ActivityForm from "./ActivityForm";
 import MyProfile from "./MyProfile";
+import MyActivities from "./MyActivities";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(false);
@@ -26,7 +27,7 @@ function App() {
               setCurrentUser(user);
             });
           } else {
-            res.json().then((data) => console.log(data.error));
+            res.json().then((data) => setErrors(data.error));
           }
         });
       });
@@ -47,7 +48,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <NavBar currentUser={currentUser} updateUser={updateUser}/>
+        <NavBar currentUser={currentUser} updateUser={updateUser} />
         <Switch>
           <Route path="/signup" updateUser={updateUser}>
             <Signup />
@@ -58,11 +59,14 @@ function App() {
           <Route path="/dashboard">
             <Dashboard currentUser={currentUser} activities={activities} />
           </Route>
+          <Route path="/myactivities">
+            <MyActivities currentUser={currentUser} activities={currentUser.activities}/>
+          </Route>
           <Route path="/myprofile">
-            <MyProfile currentUser={currentUser}/>
+            <MyProfile currentUser={currentUser} />
           </Route>
           <Route path="/activityform">
-            <ActivityForm currentUser={currentUser} addNewActivity={addNewActivity}/>
+            <ActivityForm currentUser={currentUser} addNewActivity={addNewActivity} />
           </Route>
         </Switch>
       </div>
