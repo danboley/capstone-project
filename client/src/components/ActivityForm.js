@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory, useParams } from "react-router-dom";
 
-function ActivityForm({ currentUser, addNewActivity }) {
+function ActivityForm({ currentUser, addActivity }) {
     const [activityTitle, setActivityTitle] = useState("");
     const [activityDate, setActivityDate] = useState("");
     const [activityTime, setActivityTime] = useState("");
@@ -47,7 +47,7 @@ function ActivityForm({ currentUser, addNewActivity }) {
             setIsLoading(false);
             if (r.ok) {
               r.json().then((data) => {
-                addNewActivity(data);
+                addActivity(data);
                 // history.push(`/activities/${id}`);
               });
             } else {

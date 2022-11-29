@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-function ActivityDetailPage({ currentUser }) {
+function ActivityDetailPage({ currentUser, editActivity }) {
     const [activity, setActivity] = useState("");
+    const [errors, setErrors] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [expand, setExpand] = useState(false)
     const { id } = useParams();
 
     useEffect(() => {
@@ -13,7 +16,37 @@ function ActivityDetailPage({ currentUser }) {
 
     const { title, date, time, distance, duration, sport, elevation, description, location, user } = activity;
 
+    function expandForm() {
+        setExpand(prev => !prev)
+    }
+
     // Potentially have Edit/Delete functionality here
+
+    function handleActivityEdit(e) {
+        e.preventDefault();
+        setIsLoading(true);
+        fetch(`/activities/${id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+    
+          })
+        })
+        .then((r) => {
+          setIsLoading(false);
+          if (r.ok) {
+            r.json().then((data) => {
+              editActivity(data);
+              expandForm()
+              // history.push(`/activities/${id}`);
+            });
+          } else {
+            r.json().then((err) => setErrors(err.errors));
+          }
+        });
+      }
 
   return (
     <div className="activity-detail-page">
@@ -22,6 +55,9 @@ function ActivityDetailPage({ currentUser }) {
             <div className="act-det-head">
                 {user?.subscriber ? <div>Subscriber</div> : null}
                 <div>{user?.first_name} {user?.last_name}</div>
+                <div>
+                    <button onClick={expandForm}>Edit</button>
+                </div>
             </div>
             <div className="act-det-left">
                 <div>
@@ -90,6 +126,15 @@ function ActivityDetailPage({ currentUser }) {
         {/* <div className="act-det-map">
             <div>map</div>
         </div> */}
+        {expand &&
+        <div className="edit-activity-form">
+            <div>TEST</div>
+        </div>}
+
+        <div className="message-div">
+            {errors ? <div>{errors}</div> : null}
+            {isLoading ? "Loading..." : null}
+        </div>
         <div>
         {(currentUser?.id === user?.id) ? "match" : "no match"}
         </div>

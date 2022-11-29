@@ -5,7 +5,7 @@ function MyActivities({ currentUser, activities, deleteActivity }) {
 
  const activityRows = activities?.map((activity) => {
    return (
-     <MyActivitiesTable {...activity} activity={activity} key={activity.id} deleteActivity={deleteActivity}/>
+     <MyActivitiesTable {...activity} activity={activity} key={activity.id} deleteActivity={deleteActivity} />
    );
  });
 

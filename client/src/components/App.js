@@ -43,16 +43,26 @@ function App() {
   }, []);
 
   // Create Activity Callback
-  function addNewActivity(newActivity) {
-    setActivities([...newActivity])
+  function addActivity(newActivity) {
+    setActivities([...newActivity]);
   }
 
   // Delete Activity Callback
   function deleteActivity(id) {
-    const updateActivities = activities.filter(
+    const refinedActivities = activities.filter(
       (activity) => activity.id !== id
     );
-    setActivities(updateActivities);
+    setActivities(refinedActivities);
+  }
+
+  // Update Activity Callback
+  function editActivity(edit) {
+    const updatedActivities = activities?.map((activity) => {
+      if (activity.id === edit.id) {
+        return edit;
+      } else return activity;
+    });
+    setActivities(updatedActivities);
   }
 
   return (
@@ -70,16 +80,16 @@ function App() {
             <Dashboard currentUser={currentUser} activities={activities} />
           </Route>
           <Route path="/myactivities">
-            <MyActivities currentUser={currentUser} activities={currentUser.activities} deleteActivity={deleteActivity}/>
+            <MyActivities currentUser={currentUser} activities={currentUser.activities} deleteActivity={deleteActivity} />
           </Route>
           <Route path="/activities/:id">
-            <ActivityDetailPage currentUser={currentUser} />
+            <ActivityDetailPage currentUser={currentUser} editActivity={editActivity}/>
           </Route>
           <Route path="/myprofile">
             <MyProfile currentUser={currentUser} activities={currentUser.activities}/>
           </Route>
           <Route path="/activityform">
-            <ActivityForm currentUser={currentUser} addNewActivity={addNewActivity} />
+            <ActivityForm currentUser={currentUser} addActivity={addActivity} />
           </Route>
         </Switch>
       </div>

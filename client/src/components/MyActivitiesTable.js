@@ -19,11 +19,10 @@ function MyActivitiesTable({ id, activity, sport, date, title, duration, distanc
 
   function handleActivityDelete() {
     fetch(`/activities/${id}`, {
-        method: "DELETE",
-      });
-      console.log(id)
-      deleteActivity(id);
-    }
+      method: "DELETE",
+    });
+    deleteActivity(id);
+  }
 
   // function handleDeleteInitial(id) {
   //   setPopup({
