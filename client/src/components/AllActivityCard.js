@@ -1,6 +1,8 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 function AllActivityCard({ activity, comments }) {
+  const history = useHistory();
 
   // function pace(activity) {
   //     return (
@@ -23,7 +25,7 @@ function AllActivityCard({ activity, comments }) {
       <div>
         {activity.date} at {activity.time} • {activity.location}
       </div>
-      <div>{activity.title}</div>
+      <div onClick={(e) => {history.push(`/activities/${activity.id}`)}}>{activity.title}</div>
       <div>{activity.description}</div>
       <div>
         <label>Distance</label>

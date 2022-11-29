@@ -11,6 +11,8 @@ function MyActivitiesTable({ id, activity, sport, date, title, duration, distanc
   //   id: null,
   // })
 
+  const newDate = (new Date(date)).toDateString('default');
+
   const handleShareToggle = () => {
     setShareToggle((prev) => !prev);
   }
@@ -81,7 +83,7 @@ function MyActivitiesTable({ id, activity, sport, date, title, duration, distanc
   return (
       <tr className="training-activity-row" key={id}>
           <td>{sport}</td>
-              <td>{date}</td>
+              <td>{newDate}</td>
               <td onClick={(e) => {history.push(`/activities/${id}`)}}>{title}</td>
               <td>{duration}</td>
               <td>{parseFloat(distance)} mi</td>
