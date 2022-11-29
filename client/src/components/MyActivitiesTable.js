@@ -6,6 +6,8 @@ function MyActivitiesTable({ id, activity, sport, date, title, duration, distanc
   const handleShareToggle = () => {
     setShareToggle((prev) => !prev);
   }
+
+  // Potentially have Edit/Delete functionality here
     
   return (
       <tr className="training-activity-row" key={id}>

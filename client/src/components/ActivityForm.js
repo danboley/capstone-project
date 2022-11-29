@@ -17,6 +17,8 @@ function ActivityForm({ currentUser, addNewActivity }) {
 
     const history = useHistory();
 
+    console.log(parseInt(currentUser.id))
+
     const sports = ["Ride", "Run", "Swim", "Hike", "Walk", "Alpine Ski", "Backcountry Ski", "Canoe", "Crossfit", "E-Bike Ride", "Elliptical", "Golf", "Handcycle", "Ice Skate", "Inline Skate", "Kayaking", "Kitesurf", "Nordic Ski", "Rock Climb", "Roller Ski", "Rowing", "Sail", "Skateboard", "Snowboard", "Snowshoe", "Football (Soccer)", "Stair-Stepper", "Stand Up Paddling", "Surfing", "Velomobile", "Virtual Ride", "Virtual Run", "Weight Training", "Wheelchair", "Windsurf", "Workout", "Yoga"]
 
     function handleActivitySubmit(e) {
@@ -47,6 +49,7 @@ function ActivityForm({ currentUser, addNewActivity }) {
             if (r.ok) {
               r.json().then((data) => {
                 addNewActivity(data);
+                console.log(data);
                 // history.push(`/myactivities/${data.id}`);
               });
             } else {
