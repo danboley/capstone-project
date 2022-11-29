@@ -63,7 +63,7 @@ function App() {
             <MyActivities currentUser={currentUser} activities={currentUser.activities}/>
           </Route>
           <Route path="/myprofile">
-            <MyProfile currentUser={currentUser} />
+            <MyProfile currentUser={currentUser} activities={currentUser.activities}/>
           </Route>
           <Route path="/activityform">
             <ActivityForm currentUser={currentUser} addNewActivity={addNewActivity} />
