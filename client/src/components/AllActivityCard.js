@@ -1,7 +1,6 @@
 import React from "react";
 
 function AllActivityCard({ activity, comments }) {
-  console.log(activity);
 
   // function pace(activity) {
   //     return (
@@ -44,7 +43,7 @@ function AllActivityCard({ activity, comments }) {
         </div> */}
       <div>{activity.map}</div>
       
-      {comments?.map((comment) => <div>{comment.comment}</div>)}
+      {comments?.map((comment) => <div key={comment.id}>{comment.comment}</div>)}
       {/* <div>{activity.comments}</div> */}
     </div>
   );

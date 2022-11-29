@@ -4,9 +4,10 @@ import ProfileActivityCard from './ProfileActivityCard';
 function MyProfile({ currentUser, activities }) {
 
   // profile activities limited to 5
-  const profileActivities = activities?.slice(-5).map((activity) => (
-      <ProfileActivityCard currentUser={currentUser} {...activity} activity={activity} key={activity.key} comments={activity.comments} />
-  ));
+  const profileActivities = activities?.slice(-5).map((activity) => {
+    return (
+      <ProfileActivityCard currentUser={currentUser} {...activity} activity={activity} key={activity.id} comments={activity.comments} />
+    )});
 
   // today date variables
   const today = new Date();

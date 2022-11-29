@@ -3,9 +3,9 @@ import MyActivitiesTable from './MyActivitiesTable';
  
 function MyActivities({ currentUser, activities }) {
 
- const activityRows = activities.map((activity) => {
+ const activityRows = activities?.map((activity) => {
    return (
-     <MyActivitiesTable {...activity} key={activity.key} />
+     <MyActivitiesTable {...activity} key={activity.id} />
    );
  });
 
