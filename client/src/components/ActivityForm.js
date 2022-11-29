@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 function ActivityForm({ currentUser, addNewActivity }) {
     const [activityTitle, setActivityTitle] = useState("");
@@ -16,8 +16,7 @@ function ActivityForm({ currentUser, addNewActivity }) {
     const [isLoading, setIsLoading] = useState(false);
 
     const history = useHistory();
-
-    console.log(parseInt(currentUser.id))
+    const { id } = useParams();
 
     const sports = ["Ride", "Run", "Swim", "Hike", "Walk", "Alpine Ski", "Backcountry Ski", "Canoe", "Crossfit", "E-Bike Ride", "Elliptical", "Golf", "Handcycle", "Ice Skate", "Inline Skate", "Kayaking", "Kitesurf", "Nordic Ski", "Rock Climb", "Roller Ski", "Rowing", "Sail", "Skateboard", "Snowboard", "Snowshoe", "Football (Soccer)", "Stair-Stepper", "Stand Up Paddling", "Surfing", "Velomobile", "Virtual Ride", "Virtual Run", "Weight Training", "Wheelchair", "Windsurf", "Workout", "Yoga"]
 
@@ -49,8 +48,7 @@ function ActivityForm({ currentUser, addNewActivity }) {
             if (r.ok) {
               r.json().then((data) => {
                 addNewActivity(data);
-                console.log(data);
-                // history.push(`/myactivities/${data.id}`);
+                // history.push(`/activities/${id}`);
               });
             } else {
               r.json().then((err) => setErrors(err.errors));

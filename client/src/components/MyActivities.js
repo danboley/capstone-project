@@ -1,11 +1,11 @@
 import React from 'react';
 import MyActivitiesTable from './MyActivitiesTable';
  
-function MyActivities({ currentUser, activities }) {
+function MyActivities({ currentUser, activities, deleteActivity }) {
 
  const activityRows = activities?.map((activity) => {
    return (
-     <MyActivitiesTable {...activity} key={activity.id} />
+     <MyActivitiesTable {...activity} activity={activity} key={activity.id} deleteActivity={deleteActivity}/>
    );
  });
 

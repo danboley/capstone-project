@@ -42,8 +42,17 @@ function App() {
       .then((data) => setActivities(data));
   }, []);
 
+  // Create Activity Callback
   function addNewActivity(newActivity) {
     setActivities([...newActivity])
+  }
+
+  // Delete Activity Callback
+  function deleteActivity(id) {
+    const updateActivities = activities.filter(
+      (activity) => activity.id !== id
+    );
+    setActivities(updateActivities);
   }
 
   return (
@@ -61,7 +70,7 @@ function App() {
             <Dashboard currentUser={currentUser} activities={activities} />
           </Route>
           <Route path="/myactivities">
-            <MyActivities currentUser={currentUser} activities={currentUser.activities}/>
+            <MyActivities currentUser={currentUser} activities={currentUser.activities} deleteActivity={deleteActivity}/>
           </Route>
           <Route path="/activities/:id">
             <ActivityDetailPage currentUser={currentUser} />

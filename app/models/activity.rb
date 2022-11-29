@@ -1,6 +1,6 @@
 class Activity < ApplicationRecord
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   # def date
   #   read_attribute(:date).strftime("%D/%M/%Y")
