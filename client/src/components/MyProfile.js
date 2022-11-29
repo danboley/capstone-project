@@ -3,13 +3,23 @@ import ProfileActivityCard from './ProfileActivityCard';
 
 function MyProfile({ currentUser, activities }) {
 
-  const profileActivities = activities?.map((activity) => {
-    return (
-      <ProfileActivityCard {...activity} activity={activity} key={activity.key} comments={activity.comments} />
-    );
-  });
+  // profile activities limited to 5
+  const profileActivities = activities?.slice(-5).map((activity) => (
+      <ProfileActivityCard currentUser={currentUser} {...activity} activity={activity} key={activity.key} comments={activity.comments} />
+  ));
 
-  console.log(currentUser)
+  // today date variables
+  const today = new Date();
+  let yyyy = today.getFullYear();
+  let mm = today.toLocaleString('default', { month: 'short' });
+  let dd = today.getDate();
+
+  // 7 days ago date variables
+  const weekAgo = new Date(today);
+  weekAgo.setDate(weekAgo.getDate() - 7);
+  let yyyyOld = weekAgo.getFullYear();
+  let mmOld = weekAgo.toLocaleString('default', { month: 'short' });
+  let ddOld = weekAgo.getDate();
 
   return (
     <div className="my-profile">
@@ -26,7 +36,10 @@ function MyProfile({ currentUser, activities }) {
         </div>
       </div>
       <div className="profile-activities">
-        <h2>Activities for (week ago) - (today)</h2>
+        <h2>Activities for {mmOld} {ddOld}, {yyyyOld} - {mm} {dd}, {yyyy}</h2>
+      </div>
+      <div>
+        {profileActivities}
       </div>
     </div>
   );
