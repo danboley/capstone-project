@@ -19,7 +19,7 @@ function AllActivityCard({ activity, comments }) {
         {activity.user.subscriber}
       </div>
       <div>{activity.sport}</div>
-      <div>
+      <div onClick={(e) => {history.push(`/athletes/${activity.user.id}`)}}>
         {activity.user.first_name} {activity.user.last_name}
       </div>
       <div>

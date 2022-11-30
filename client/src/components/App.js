@@ -8,6 +8,7 @@ import ActivityForm from "./ActivityForm";
 import MyProfile from "./MyProfile";
 import MyActivities from "./MyActivities";
 import ActivityDetailPage from "./ActivityDetailPage";
+import UserProfilePage from "./UserProfilePage";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(false);
@@ -90,7 +91,7 @@ function App() {
             <MyProfile currentUser={currentUser} activities={currentUser.activities}/>
           </Route>
           <Route path="/athletes/:id">
-            <MyProfile />
+            <UserProfilePage />
           </Route>
           <Route path="/activityform">
             <ActivityForm currentUser={currentUser} addActivity={addActivity} />

@@ -81,7 +81,9 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
         <div className="act-det-card">
             <div className="act-det-head">
                 {user?.subscriber ? <div>Subscriber</div> : null}
-                <div>{user?.first_name} {user?.last_name} - {sport}</div>
+                <div onClick={(e) => {history.push(`/athletes/${user.id}`)}}>{user?.first_name} {user?.last_name}</div>
+                <div> - </div>
+                <div>{sport}</div>
                 {(currentUser?.id === user?.id) ? (
                 <div className="conditional-buttons">
                     <div>
@@ -186,9 +188,6 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
         <div className="message-div">
             {errors ? <div>{errors}</div> : null}
             {isLoading ? "Loading..." : null}
-        </div>
-        <div>
-            {(currentUser?.id === user?.id) ? "match" : "no match"}
         </div>
     </div>
   );
