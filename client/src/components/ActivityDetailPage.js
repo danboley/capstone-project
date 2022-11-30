@@ -18,7 +18,7 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
           .then((data) => setActivity(data));
     }, [id]);
 
-    const { title, date, time, distance, duration, sport, elevation, description, location, user } = activity;
+    const { title, date, time, distance, duration, sport, elevation, description, location, user, comments } = activity;
 
     const sports = ["Ride", "Run", "Swim", "Hike", "Walk", "Alpine Ski", "Backcountry Ski", "Canoe", "Crossfit", "E-Bike Ride", "Elliptical", "Golf", "Handcycle", "Ice Skate", "Inline Skate", "Kayaking", "Kitesurf", "Nordic Ski", "Rock Climb", "Roller Ski", "Rowing", "Sail", "Skateboard", "Snowboard", "Snowshoe", "Football (Soccer)", "Stair-Stepper", "Stand Up Paddling", "Surfing", "Velomobile", "Virtual Ride", "Virtual Run", "Weight Training", "Wheelchair", "Windsurf", "Workout", "Yoga"]
 
@@ -82,12 +82,16 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
             <div className="act-det-head">
                 {user?.subscriber ? <div>Subscriber</div> : null}
                 <div>{user?.first_name} {user?.last_name} - {sport}</div>
-                <div>
-                    <button onClick={expandForm}>Edit</button>
-                </div>
-                <div>
-                    <button className="delete-button" onClick={handleDeleteInitial}>Delete</button>
-                </div>
+                {(currentUser?.id === user?.id) ? (
+                <div className="conditional-buttons">
+                    <div>
+                        <button onClick={expandForm}>Edit</button>
+                    </div>
+                    <div>
+                        <button className="delete-button" onClick={handleDeleteInitial}>Delete</button>
+                    </div>
+                </div>)
+                : null}
             </div>
             <div className="act-det-left">
                 <div>
@@ -152,6 +156,9 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
                     </div>
                 </div>
             </div>
+        </div>
+        <div className="comment-div">
+            {comments?.map((comment) => <div key={comment.id}>{comment.comment}</div>)}
         </div>
         {/* <div className="act-det-map">
             <div>map</div>

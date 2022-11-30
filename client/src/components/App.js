@@ -89,6 +89,9 @@ function App() {
           <Route path="/myprofile">
             <MyProfile currentUser={currentUser} activities={currentUser.activities}/>
           </Route>
+          <Route path="/athletes/:id">
+            <MyProfile />
+          </Route>
           <Route path="/activityform">
             <ActivityForm currentUser={currentUser} addActivity={addActivity} />
           </Route>
