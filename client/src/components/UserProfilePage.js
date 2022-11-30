@@ -13,8 +13,12 @@ function UserDetailPage() {
       .then((data) => setAthlete(data));
   }, []);
 
+  const activitiesByDate = athlete.activities?.slice().sort(function(a, b) {
+    return new Date(b.date) - new Date (a.date);
+  })
+
   // profile activities limited to 5
-  const athleteActivities = athlete.activities?.slice(-5).map((activity) => {
+  const athleteActivities = activitiesByDate?.slice(0,5).map((activity) => {
     return (
       <UserProfileActivityCard athlete={athlete} {...activity} activity={activity} key={activity.id} comments={athlete.comments} />
     )});

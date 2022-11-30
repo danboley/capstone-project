@@ -3,7 +3,11 @@ import MyActivitiesTable from './MyActivitiesTable';
  
 function MyActivities({ currentUser, activities, deleteActivity }) {
 
- const activityRows = activities?.map((activity) => {
+  const activitiesByDate = activities?.slice().sort(function(a, b) {
+    return new Date(b.date) - new Date (a.date);
+  })
+
+ const activityRows = activitiesByDate?.map((activity) => {
    return (
      <MyActivitiesTable {...activity} activity={activity} key={activity.id} deleteActivity={deleteActivity} />
    );

@@ -5,8 +5,6 @@ function UserProfileActivityCard({ athlete, activity, comments }) {
 
     const history = useHistory();
 
-    console.log(activity)
-
   return (
     <div className="athlete-activity-card">
         <div className="pro-act-pic">

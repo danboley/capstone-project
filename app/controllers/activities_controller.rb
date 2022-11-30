@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   def index
-    render json: Activity.all, status: :ok
+    render json: Activity.all.order(date: :desc), status: :ok
   end
 
   def show

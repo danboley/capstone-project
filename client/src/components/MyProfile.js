@@ -3,8 +3,12 @@ import ProfileActivityCard from './ProfileActivityCard';
 
 function MyProfile({ currentUser, activities }) {
 
+  const activitiesByDate = activities?.slice().sort(function(a, b) {
+    return new Date(b.date) - new Date (a.date);
+  })
+
   // profile activities limited to 5
-  const profileActivities = activities?.slice(-5).map((activity) => {
+  const profileActivities = activitiesByDate?.slice(0, 5).map((activity) => {
     return (
       <ProfileActivityCard currentUser={currentUser} {...activity} activity={activity} key={activity.id} comments={activity.comments} />
     )});
