@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
-function ActivityDetailPage({ currentUser, editActivity }) {
+function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
     const [activity, setActivity] = useState("");
     const [updateTitle, setUpdateTitle] = useState("");
     const [updateDescription, setUpdateDescription] = useState("");
@@ -10,6 +10,7 @@ function ActivityDetailPage({ currentUser, editActivity }) {
     const [isLoading, setIsLoading] = useState(false);
     const [expand, setExpand] = useState(false)
     const { id } = useParams();
+    const history = useHistory();
 
     useEffect(() => {
         fetch(`/activities/${id}`)
@@ -24,8 +25,6 @@ function ActivityDetailPage({ currentUser, editActivity }) {
     function expandForm() {
         setExpand(prev => !prev)
     }
-
-    // Potentially have Edit/Delete functionality here
 
     function handleActivityEdit(e) {
         e.preventDefault();
@@ -61,6 +60,21 @@ function ActivityDetailPage({ currentUser, editActivity }) {
         }
     }
 
+    function handleDeleteInitial() {
+        if (window.confirm("Are you sure? Deleting an activity cannot be undone.") == true) {
+            handleActivityDeleteTrue()
+        }
+    }
+
+    function handleActivityDeleteTrue() {
+        fetch(`/activities/${id}`, {
+            method: "DELETE",
+        });
+        deleteActivity(id);
+        window.location.reload();
+        history.push("/myactivities");
+    }
+
   return (
     <div className="activity-detail-page">
         ActivityDetailPage
@@ -70,6 +84,9 @@ function ActivityDetailPage({ currentUser, editActivity }) {
                 <div>{user?.first_name} {user?.last_name} - {sport}</div>
                 <div>
                     <button onClick={expandForm}>Edit</button>
+                </div>
+                <div>
+                    <button className="delete-button" onClick={handleDeleteInitial}>Delete</button>
                 </div>
             </div>
             <div className="act-det-left">

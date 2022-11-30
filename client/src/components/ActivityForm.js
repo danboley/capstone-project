@@ -16,7 +16,8 @@ function ActivityForm({ currentUser, addActivity }) {
     const [isLoading, setIsLoading] = useState(false);
 
     const history = useHistory();
-    const { id } = useParams();
+    // const { id } = useParams();
+    // console.log(currentUser?.activities?.slice(-1)[0].id)
 
     const sports = ["Ride", "Run", "Swim", "Hike", "Walk", "Alpine Ski", "Backcountry Ski", "Canoe", "Crossfit", "E-Bike Ride", "Elliptical", "Golf", "Handcycle", "Ice Skate", "Inline Skate", "Kayaking", "Kitesurf", "Nordic Ski", "Rock Climb", "Roller Ski", "Rowing", "Sail", "Skateboard", "Snowboard", "Snowshoe", "Football (Soccer)", "Stair-Stepper", "Stand Up Paddling", "Surfing", "Velomobile", "Virtual Ride", "Virtual Run", "Weight Training", "Wheelchair", "Windsurf", "Workout", "Yoga"]
 
@@ -48,8 +49,10 @@ function ActivityForm({ currentUser, addActivity }) {
             if (r.ok) {
               r.json().then((data) => {
                 addActivity(data);
-                // history.push(`/activities/${id}`);
-              });
+                // console.log(currentUser?.activities?.slice(-1)[0].id)
+                // history.push(`/activities/${currentUser?.activities?.slice(-1)[0].id}`);
+                window.location.reload();
+              })
             } else {
               r.json().then((err) => setErrors(err.errors));
             }

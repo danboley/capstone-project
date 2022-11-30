@@ -1,6 +1,9 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 function ProfileActivityCard({ currentUser, activity, comments }) {
+
+    const history = useHistory();
 
   return (
     <div className="profile-activity-card">
@@ -16,7 +19,7 @@ function ProfileActivityCard({ currentUser, activity, comments }) {
         <div className="pro-act-sport">
             <div>{activity.sport}</div>
         </div>
-        <div className="pro-act-title">
+        <div className="pro-act-title" onClick={(e) => {history.push(`/activities/${activity.id}`)}}>
             <h3>{activity.title}</h3>
         </div>
         <div className="pro-act-stats">

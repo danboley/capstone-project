@@ -84,7 +84,7 @@ function App() {
             <MyActivities currentUser={currentUser} activities={currentUser.activities} deleteActivity={deleteActivity} />
           </Route>
           <Route path="/activities/:id">
-            <ActivityDetailPage currentUser={currentUser} editActivity={editActivity}/>
+            <ActivityDetailPage currentUser={currentUser} editActivity={editActivity} deleteActivity={deleteActivity}/>
           </Route>
           <Route path="/myprofile">
             <MyProfile currentUser={currentUser} activities={currentUser.activities}/>
