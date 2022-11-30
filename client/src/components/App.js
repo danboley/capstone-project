@@ -36,11 +36,12 @@ function App() {
 
   const updateUser = (user) => setCurrentUser(user);
 
+  // Double check dependency array below, might need to remove currentUser... TBD
   useEffect(() => {
     fetch("/activities")
       .then((res) => res.json())
       .then((data) => setActivities(data));
-  }, []);
+  }, [currentUser]);
 
   // Create Activity Callback
   function addActivity(newActivity) {
