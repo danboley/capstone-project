@@ -5,7 +5,7 @@ import SideBar from './SideBar';
 function Dashboard({ currentUser, activities }) {
 
   return (
-    <div>
+    <div className="dash">
         <SideBar currentUser={currentUser} />
         <AllActivities currentUser={currentUser} activities={activities} />
     </div>

@@ -1,13 +1,160 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
+    font-family: MaisonNeue,Segoe UI,Helvetica Neue,-apple-system,system-ui,BlinkMacSystemFont,Roboto,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* NAV BAR */
+
+.nav-link, .nav-link.visited {
+  text-decoration: none;
+  color: #494950;
+}
+
+.logo, .nav-pro-pic {
+  width: 40px;
+  height: 40px;
+  padding: 0px;
+  margin: 8px 0px 0px 0px;
+}
+
+.logo {
+  border-radius: 4px;
+}
+
+.nav-pro-pic {
+  border-radius: 180px;
+}
+
+.dropdown-arrow {
+  margin: 15px 0px 0px 0px;
+}
+
+.nav-link {
+  margin: 15px 0px 0px 0px;
+}
+
+#activity-plus {
+  margin: 0px 0px 0px 10px;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+#global-header .user-nav-group {
+  float: right;
+}
+
+#global-header .nav-bar .nav-item {
+  display: flex;
+  justify-content: center;
+}
+
+ #global-header .nav-bar .nav-link {
+  height: 100%;
+  padding: 0 12px;
+  color: #494950;
+ }
+ 
+ #global-header .nav-item.selected {
+  border-bottom-color: #fc5200;
+ }
+
+ #global-header .nav-group {
+  position: relative;
+  height: 55px;
+  display: flex;
+ }
+
+ #global-header .global-nav {
+  margin-left: 20px;
+  float: left;
+ }
+ 
+ #global-header .branding {
+  height: 20px;
+  width: 95px;
+  float: left;
+ }
+ 
+ .container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+ }
+
+ #global-header .nav-bar {
+  height: 55px;
+  position: relative;
+ }
+ 
+ #global-header {
+  border-bottom: 1px solid #f0f0f5;
+  background-color: #fff;
+  height: 55px;
+  line-height: 18px;
+  position: relative;
+ }
+
+ #global-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+ }
+ 
+/* DASHBOARD */
+
+.dash {
+  margin: 55px 0px 0px 0px;
+}
+
+/* MY PROFILE */
+
+.my-profile {
+  margin: 55px 0px 0px 0px;
+}
+
+/* MY ACTIVITIES */
+
+.my-activities {
+  margin: 55px 0px 0px 0px;
+}
+
+/* USER PROFILE */
+
+.user-profile {
+  margin: 55px 0px 0px 0px;
+}
+
+/* ACTIVITY DETAIL PAGE */
+
+.activity-detail-page {
+  margin: 55px 0px 0px 0px;
+}
+
+/* SIGN UP */
+
+.signup {
+  margin: 55px 0px 0px 0px;
+}
+
+/* SIGN UP */
+
+.login {
+  margin: 55px 0px 0px 0px;
+}
+
+/* ACTIVITY FORM */
+
+.add-activity-page {
+  margin: 55px 0px 0px 0px;
 }
