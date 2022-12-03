@@ -5,9 +5,11 @@ import SideBar from './SideBar';
 function Dashboard({ currentUser, activities }) {
 
   return (
-    <div className="m-16 bg-gray-100">
+    <div className="mt-14  mx-16 bg-gray-100">
+      <div>
         <SideBar currentUser={currentUser} />
         <AllActivities currentUser={currentUser} activities={activities} />
+      </div>  
     </div>
   );
 }

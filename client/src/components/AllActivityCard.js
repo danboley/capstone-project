@@ -13,7 +13,7 @@ function AllActivityCard({ activity, comments }) {
 //   console.log(comments.map((comment) => comment.comment))
 
   return (
-    <div className="p-6 m-12 rounded bg-white">
+    <div className="p-6 m-12 rounded w-7/12 bg-white">
       <div className="px-6 pt-4 mt-0">
         <div className="flex">
           <img className="h-10 w-10 rounded-full" src={activity.user.pro_pic}></img>
