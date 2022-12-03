@@ -5,10 +5,12 @@ import AllActivityCard from './AllActivityCard';
 function AllActivities({ currentUser, activities }) {
 
   return (
-    <div className="activity-feed">
-        AllActivities/Dashboard
+      <div className="grid pl-48 bg-yellow-200">
+        {/* <div className="float-left">Followers ▼</div> */}
+        <div className="bg-red-500 px-32 w-5/6">
         {activities?.map((activity) => (<AllActivityCard {...activity} activity={activity} comments={activity.comments} key={activity.id} />))}
-    </div>
+        </div>
+      </div>
   );
 }
 

@@ -34,23 +34,23 @@ function MyActivitiesTable({ id, activity, sport, date, title, duration, distanc
     }
 
   return (
-      <tr className="training-activity-row" key={id}>
-          <td>{sport}</td>
-              <td>{newDate}</td>
-              <td onClick={(e) => {history.push(`/activities/${id}`)}}>{title}</td>
-              <td>{duration}</td>
-              <td>{parseFloat(distance)} mi</td>
-              <td>{elevation} ft</td>
-              {/* <td>{relative_effort}</td> */}
+      <tr className="table-row" key={id}>
+          <td className="table-cell px-4 py-2 text-left">{sport}</td>
+              <td className="table-cell px-4 py-2 text-left">{newDate}</td>
+              <td className="table-cell px-4 py-2 text-left" onClick={(e) => {history.push(`/activities/${id}`)}}>{title}</td>
+              <td className="table-cell px-4 py-2 text-right">{duration}</td>
+              <td className="table-cell px-4 py-2 text-right">{parseFloat(distance)} mi</td>
+              <td className="table-cell px-4 py-2 text-right">{elevation} ft</td>
+              {/* <td className="table-cell px-4 py-2 text-right">{relative_effort}</td> */}
               <td>
-                <button className="edit-button" onClick={(e) => {history.push(`/activities/${id}`)}}>Edit</button>
+                <button className="table-cell px-4 py-2 text-center" onClick={(e) => {history.push(`/activities/${id}`)}}>Edit</button>
               </td>
               <td>
-                <button className="delete-button" onClick={handleDeleteInitial}>Delete</button>
+                <button className="table-cell px-4 py-2 text-center" onClick={handleDeleteInitial}>Delete</button>
               </td>
               <td>
                 {/* <button> */}
-                <button type="dropdown" key={id} onClick={handleShareToggle}>
+                <button className="table-cell px-4 py-2 text-center" type="dropdown" key={id} onClick={handleShareToggle}>
                   Share
                 </button>
                   {shareToggle ?
