@@ -28,8 +28,8 @@ function NavBar({ currentUser, updateUser }) {
   }
 
   return (
-    <header id="global-header" class="fixed top-0 left-0 right-0 bg-white h-14 leading-4 text-sm">
-      <div className="h-14 relative border-b-2 border-gray-100 pl-12 pr-16">
+    <header id="global-header" className="fixed top-0 left-0 right-0  bg-gray-100 h-14 leading-4 text-sm">
+      <div className="h-14 relative border-b-2 bg-white border-gray-100 pl-12 pr-16">
         {currentUser ? (
           <div className="">
             <div className="ml-5 float-left relative h-14 flex">

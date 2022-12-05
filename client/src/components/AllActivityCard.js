@@ -66,20 +66,20 @@ function AllActivityCard({ activity, comments }) {
           <img className="h-10 w-10 rounded-full float-left" src={activity.user.pro_pic}></img>
             {activity.user.subscriber ? <img className="h-4 w-4 mr-2" src={sub}></img> : null}
           </div>
-          <div className="pl-12" onClick={(e) => {history.push(`/athletes/${activity.user.id}`)}}>
+          <div className="pl-16" onClick={(e) => {history.push(`/athletes/${activity.user.id}`)}}>
             <p className="text-sm font-semibold">{activity.user.first_name} {activity.user.last_name}</p>
             <p className="text-xs">{newDate(date)} at {newTime(time)} • {activity.location}</p>
           </div>
         </div>
       </div>
       <div className="pt-4">
-        <div className="float-left">{activity.sport}</div>
-        <div className="pl-12 font-bold text-xl" onClick={(e) => {history.push(`/activities/${activity.id}`)}}>
+        <div className="float-left text-xs">{activity.sport}</div>
+        <div className="pl-16 font-bold text-xl" onClick={(e) => {history.push(`/activities/${activity.id}`)}}>
           <p>{activity.title}</p>
           </div>
-        <div className="pl-12 text-sm">{activity.description}</div>
+        <div className="pl-16 text-sm">{activity.description}</div>
         <div className="flex place-content-between pt-4 pr-36">
-          <div className="pl-12 text-xl">
+          <div className="pl-16 text-xl">
             <label className="text-xs">Distance</label>
             <br></br>
             {activity.distance} mi
@@ -105,7 +105,6 @@ function AllActivityCard({ activity, comments }) {
       <div className="">
         {comments?.map((comment) => <div className="pt-4 pl-8 mt-6 relative border-t-2 border-gray-100" key={comment.id}>{comment?.user?.name} {comment.comment}</div>)}
       </div>
-      {/* <div>{activity.comments}</div> */}
     </div>
   );
 }

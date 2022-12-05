@@ -22,8 +22,8 @@ function MyActivities({ currentUser, activities, deleteActivity }) {
      <div>
        <table className="">
          <thead>
-           <tr className="table-row">
-             <th className="table-cell px-4 py-2 text-center">Sport</th>
+           <tr className="table-row text-xs">
+             <th className="table-cell px-4 py-2 text-left">Sport</th>
              <th className="table-cell px-4 py-2 text-center">Date</th>
              <th className="table-cell px-4 py-2 text-center">Title</th>
              <th className="table-cell px-4 py-2 text-center">Time</th>

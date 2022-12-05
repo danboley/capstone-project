@@ -18,26 +18,38 @@ function SideBar({ currentUser }) {
         </NavLink>
         {currentUser.subscriber? <img className="w-6 h-6" src={sub}></img> : null}
       </div>
-      <div className="flex justify-center gap-2 text-2xl pt-8 leading-tight">
-        <div className="bg-purple-400">{currentUser.first_name}</div>
-        <div className="bg-purple-400">{currentUser.last_name}</div>
+      <div className="flex justify-center gap-2 text-2xl pt-8 pb-2 leading-tight">
+        <div className="">{currentUser.first_name}</div>
+        <div className="">{currentUser.last_name}</div>
       </div>
-      <div>
-        <div className="flex justify-center pt-2">
+
+      <div className="pt-2 flex justify-center">
+        <div className="text-xl px-4 border-r-2 border-gray-100">
+        <label className="text-xs">Following</label>
+        <br></br>
+        {/* <div className="ml-4 ">{currentUser?.following?.length}</div> */}
+        <div className="ml-4 ">10</div>
+        </div>
+
+        <div className="text-xl px-4 border-r-2 border-gray-100">
+        <label className="text-xs">Followers</label>
+        <br></br>
+        {/* <div className="ml-4">{currentUser?.followers?.length}</div> */}
+        <div className="ml-5">9</div>
+        </div>
+
+        <div className="text-xl px-4">
           <NavLink to="/myactivities">
             <label className="text-xs">Activities</label>
             <br></br>
-            <div className="text-xl">{currentUser?.activities?.length}</div>
+            <div className="ml-4">{currentUser?.activities?.length}</div>
           </NavLink>
         </div>
       </div>
-      {/* stretch goals
-        <div>
-          <div>Latest Activity</div>
-          <div>{latestActivity[0]?.title} • {latestActivity[0]?.date}</div>
-        </div>
-        <div>{currentUser.following}</div>
-        <div>{currentUser.followers}</div> */}
+      <div className="flex justify-center mt-4 pt-4 border-t-2 border-gray-100">
+        <div>Latest Activity</div>
+        {/* <div>{latestActivity[0]?.title} • {latestActivity[0]?.date}</div> */}
+      </div>
     </div>
   );
 }

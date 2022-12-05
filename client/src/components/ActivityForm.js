@@ -67,6 +67,12 @@ function ActivityForm({ currentUser, addActivity }) {
             <form className="new-activity-form" onSubmit={handleActivitySubmit}>
                 <label className="form-label">Distance</label>
                 <input className="form-input" type="text" value={activityDistance} onChange={(e) => setActivityDistance(e.target.value)}/>
+                <select className="form-dropdown">
+                    <option>miles</option>
+                    <option>kilometers</option>
+                    <option>meters</option>
+                    <option>yards</option>
+                </select>
                 <label className="form-label">Duration</label>
                 <input className="form-input" type="text" value={activityDuration} onChange={(e) => setActivityDuration(e.target.value)}/>
                 <label className="form-label">Elevation</label>

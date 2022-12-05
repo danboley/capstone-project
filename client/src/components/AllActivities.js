@@ -5,9 +5,9 @@ import AllActivityCard from './AllActivityCard';
 function AllActivities({ currentUser, activities }) {
 
   return (
-      <div className="grid px-48 bg-yellow-200">
-        {/* <div className="float-left">Followers ▼</div> */}
-        <div className="bg-red-500 mt-12 px-48">
+      <div className="grid px-48">
+        <div className="mt-5 px-48">
+        <div className="ml-4 text-lg">Following ▼</div>
         {activities?.map((activity) => (<AllActivityCard {...activity} activity={activity} comments={activity.comments} key={activity.id} />))}
         </div>
       </div>
