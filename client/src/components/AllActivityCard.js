@@ -12,37 +12,45 @@ function AllActivityCard({ activity, comments }) {
 
 //   console.log(comments.map((comment) => comment.comment))
 
+  newDate = moment(new Date(date)).format('YYYY-MM-DD HH:mm:ss')
+
+
+
   return (
-    <div className="p-6 m-12 rounded w-7/12 bg-white">
-      <div className="px-6 pt-4 mt-0">
-        <div className="flex">
-          <img className="h-10 w-10 rounded-full" src={activity.user.pro_pic}></img>
+    <div className="p-6 m-12 rounded max-w-md min-w-md bg-white">
+      <div className="">
+        <div className="">
+          <img className="h-10 w-10 rounded-full float-left" src={activity.user.pro_pic}></img>
           <div className="">
             {activity.user.subscriber}
           </div>
-          <div className="px-6" onClick={(e) => {history.push(`/athletes/${activity.user.id}`)}}>
+          <div className="pl-12" onClick={(e) => {history.push(`/athletes/${activity.user.id}`)}}>
             {activity.user.first_name} {activity.user.last_name}
+            <br></br>
+            {activity.date} at {activity.time} • {activity.location}
           </div>
         </div>
-        <div className="px-16">
-          {activity.date} at {activity.time} • {activity.location}
-        </div>
       </div>
-      <div className="px-6">
-        <div className="">{activity.sport}</div>
-        <div onClick={(e) => {history.push(`/activities/${activity.id}`)}}>{activity.title}</div>
-        <div>{activity.description}</div>
-        <div>
-          <label>Distance</label>
-          {activity.distance} mi
-        </div>
-        <div>
-          <label>Elev Gain</label>
-          {activity.elevation} ft
-        </div>
-        <div>
-          <label>Time</label>
-          {activity.duration}
+      <div className="pt-4">
+        <div className="float-left">{activity.sport}</div>
+        <div className="pl-12" onClick={(e) => {history.push(`/activities/${activity.id}`)}}>{activity.title}</div>
+        <div className="pl-12">{activity.description}</div>
+        <div className="flex place-content-between pt-4 pr-4">
+          <div className="pl-12">
+            <label>Distance</label>
+            <br></br>
+            {activity.distance} mi
+          </div>
+          <div>
+            <label>Elev Gain</label>
+            <br></br>
+            {activity.elevation} ft
+          </div>
+          <div>
+            <label>Time</label>
+            <br></br>
+            {activity.duration}
+          </div>
         </div>
         {/* <div>
               <label>Pace</label>
