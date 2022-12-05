@@ -63,7 +63,7 @@ function ActivityForm({ currentUser, addActivity }) {
   return (
     <div className="add-activity-page">
         Add Activity
-        <div>
+        <div className="pt-20 px-4">
             <form className="new-activity-form" onSubmit={handleActivitySubmit}>
                 <label className="form-label">Distance</label>
                 <input className="form-input" type="text" value={activityDistance} onChange={(e) => setActivityDistance(e.target.value)}/>
