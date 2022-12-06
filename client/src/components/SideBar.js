@@ -52,7 +52,7 @@ function SideBar({ currentUser }) {
             <div className="font-bold text-base">Title</div>
             {/* <div>{latestActivity[0]?.title}</div> */}
             <div>•</div>
-            <div className="text-sm">Date</div>
+            <div className="text-sm leading-6">Date</div>
             {/* <div>{latestActivity[0]?.date}</div> */}
           </div>
         </div>
