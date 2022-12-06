@@ -82,13 +82,24 @@ function App() {
             <Dashboard currentUser={currentUser} activities={activities} />
           </Route>
           <Route path="/myactivities">
-            <MyActivities currentUser={currentUser} activities={currentUser.activities} deleteActivity={deleteActivity} />
+            <MyActivities
+              currentUser={currentUser}
+              activities={currentUser.activities}
+              deleteActivity={deleteActivity}
+            />
           </Route>
           <Route path="/activities/:id">
-            <ActivityDetailPage currentUser={currentUser} editActivity={editActivity} deleteActivity={deleteActivity}/>
+            <ActivityDetailPage
+              currentUser={currentUser}
+              editActivity={editActivity}
+              deleteActivity={deleteActivity}
+            />
           </Route>
           <Route path="/myprofile">
-            <MyProfile currentUser={currentUser} activities={currentUser.activities}/>
+            <MyProfile
+              currentUser={currentUser}
+              activities={currentUser.activities}
+            />
           </Route>
           <Route path="/athletes/:id">
             <UserProfilePage />

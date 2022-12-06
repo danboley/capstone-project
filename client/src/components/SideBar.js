@@ -16,7 +16,7 @@ function SideBar({ currentUser }) {
         <NavLink to="/myprofile">
           <img className="rounded-full mt-1 ml-8 h-16 w-16" src={currentUser.pro_pic}></img>
         </NavLink>
-        {!currentUser.subscriber? <img className="w-6 h-6 fixed left-56 top-20" src={sub}></img> : null}
+        {currentUser.subscriber? <img className="w-6 h-6 fixed left-56 top-20" src={sub}></img> : null}
       </div>
       <div className="flex justify-center gap-2 text-2xl hover:text-sky-600 cursor-pointer pt-8 pb-4 leading-tight">
         <div className="">{currentUser.first_name}</div>

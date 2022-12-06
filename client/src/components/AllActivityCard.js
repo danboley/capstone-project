@@ -59,7 +59,7 @@ function AllActivityCard({ activity, comments }) {
 
   return (
     <div className="p-6 m-4 rounded max-w-xl min-w-xl bg-white">
-      <div>
+      <div className="pb-6 border-gray-100 border-b-2">
       <div className="">
         <div className="">
           <div className="float-left">
@@ -103,7 +103,7 @@ function AllActivityCard({ activity, comments }) {
       {/* <div>{activity.map}</div> */}
       </div>
       <div className="">
-        {comments?.map((comment) => <div className="pt-4 pl-8 mt-6 relative border-t-2 border-gray-100" key={comment.id}>{comment?.user?.name} {comment.comment}</div>)}
+        {comments?.map((comment) => <div className="pt-2 pl-8 mt-4" key={comment.id}>{comment?.user?.name} {comment.comment}</div>)}
       </div>
     </div>
   );

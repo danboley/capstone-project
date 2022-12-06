@@ -29,12 +29,12 @@ function MyProfile({ currentUser, activities }) {
   let ddOld = weekAgo.getDate();
 
   return (
-    <div className="pt-14 max-w-full flex justify-center bg-orange-300">
-      <div className="w-4/6 bg-green-300">
+    <div className="pt-14 max-w-full flex justify-center">
+      <div className="w-4/6">
         <div className="flex">
-          <div className=""><img className="border-r-2 border-black w-80 h-80" src={currentUser.pro_pic}></img></div>
-          <div className=""><img className="border-r-2 border-black w-80 h-80" src={currentUser.pro_pic}></img></div>
-          <div className=""><img className="border-r-2 border-black w-80 h-80" src={currentUser.pro_pic}></img></div>
+          <div className=""><img className="border-r-2 border-white w-80 h-80" src={currentUser.pro_pic}></img></div>
+          <div className=""><img className="border-r-2 border-white w-80 h-80" src={currentUser.pro_pic}></img></div>
+          <div className=""><img className="border-r-2 border-white w-80 h-80" src={currentUser.pro_pic}></img></div>
           <div className=""><img className="w-80 h-80" src={currentUser.pro_pic}></img></div>
         </div>
         <div className="relative -top-16">
