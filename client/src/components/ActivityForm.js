@@ -26,7 +26,6 @@ function ActivityForm({ currentUser, addActivity }) {
         if (activitySport === "") {
             window.alert("Please select a sport");
         } else {
-        setErrors([]);
         setIsLoading(true);
         fetch(`/activities`, {
             method: `POST`,
@@ -51,7 +50,7 @@ function ActivityForm({ currentUser, addActivity }) {
                 addActivity(data);
                 // console.log(currentUser?.activities?.slice(-1)[0].id)
                 // history.push(`/activities/${currentUser?.activities?.slice(-1)[0].id}`);
-                window.location.reload();
+                // window.location.reload();
               })
             } else {
               r.json().then((err) => setErrors(err.errors));
@@ -102,9 +101,9 @@ function ActivityForm({ currentUser, addActivity }) {
                 {/* <label className="form-label">.gpx File</label>
                 <input type="file" value={activityMap} onChange={(e) => setActivityMap(e.target.value)}></input> */}
                 <button type="submit">Create</button>
-                {/* <a href={history.push(`/`)}>Cancel</a> */}
+                {/* <button onClick={history.push(`/dashboard`)}>Cancel</button> */}
             </form>
-            <div>
+            <div className="font-bold p-16">
                 {errors ? <div>{errors}</div> : null}
                 {isLoading ? "Loading..." : null}
             </div>

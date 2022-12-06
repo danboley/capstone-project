@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import UserProfileActivityCard from './UserProfileActivityCard';
+import sub from '../pics/sub.png';
+import loc from '../pics/loc.png';
 
-function UserDetailPage() {
+function UserProfilePage() {
   const [athlete, setAthlete] = useState([])
   const { id } = useParams();
   const history = useHistory();
@@ -37,27 +39,41 @@ function UserDetailPage() {
     let ddOld = weekAgo.getDate();
 
   return (
-    <div className="user-profile">
-      <div className="profile-header">
-        <div>
-          <img src={athlete.pro_pic}></img>
+    <div className="pt-14 max-w-full flex justify-center">
+      <div className="w-4/6">
+        <div className="flex">
+          <div className=""><img className="border-r-2 border-white w-80 h-80" src={athlete.pro_pic}></img></div>
+          <div className=""><img className="border-r-2 border-white w-80 h-80" src={athlete.pro_pic}></img></div>
+          <div className=""><img className="border-r-2 border-white w-80 h-80" src={athlete.pro_pic}></img></div>
+          <div className=""><img className="w-80 h-80" src={athlete.pro_pic}></img></div>
         </div>
-        <div>
-          <h1>{athlete.first_name} {athlete.last_name}</h1>
+        <div className="relative -top-16">
+          <div className="px-8 pb-4">
+            <img className="rounded-full border-2 border-slate-50 w-32 h-32" src={athlete.pro_pic}></img>
+          </div>
+          <div className="text-3xl px-4 pb-4 font-bold">
+            <h1>{athlete.first_name} {athlete.last_name}</h1>
+          </div>
+          {athlete.subscriber?
+          <div className="flex px-4 pb-2">
+            <img className="w-4 h-4" src={sub}></img>
+            <div className="text-sm px-1">Subscriber</div>
+          </div>
+          : null}
+          <div className="flex px-4 pb-1">
+            <img className="w-4 h-4" src={loc}></img>
+            <div className="text-sm px-1 pb-4">{athlete.location}</div>
+          </div>
+          <div className="text-base font-bold px-4">
+            <h2>Activities for {mmOld} {ddOld}, {yyyyOld} - {mm} {dd}, {yyyy}</h2>
+          </div>
+          <div className="px-4 pt-4">
+            {athleteActivities}
+          </div>
         </div>
-        {athlete.subscriber? <div>"Subscriber"</div> : null}
-        <div>
-          {athlete.location}
-        </div>
-      </div>
-      <div className="profile-activities">
-        <h2>Activities for {mmOld} {ddOld}, {yyyyOld} - {mm} {dd}, {yyyy}</h2>
-      </div>
-      <div>
-        {athleteActivities}
       </div>
     </div>
   );
 }
 
-export default UserDetailPage;
+export default UserProfilePage;
