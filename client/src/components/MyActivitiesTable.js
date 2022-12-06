@@ -34,7 +34,7 @@ function MyActivitiesTable({ id, activity, sport, date, title, duration, distanc
               <td className="table-cell px-4 py-2 text-left text-sm">{newDate}</td>
               <td className="table-cell px-4 py-2 text-left text-sm text-sky-600 hover:underline" onClick={(e) => {history.push(`/activities/${id}`)}}>{title}</td>
               <td className="table-cell px-4 py-2 text-right text-sm">{duration}</td>
-              <td className="table-cell px-4 py-2 text-right text-sm">{parseFloat(distance)} mi</td>
+              <td className="table-cell px-4 py-2 text-right text-sm">{parseFloat(distance).toFixed(2)} mi</td>
               <td className="table-cell px-4 py-2 text-right text-sm">{elevation} ft</td>
               {/* <td className="table-cell px-4 py-2 text-right">{relative_effort}</td> */}
               <td>

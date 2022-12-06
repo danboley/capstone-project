@@ -78,7 +78,7 @@ function AllActivityCard({ activity, comments }) {
           <p>{activity.title}</p>
           </div>
         <div className="pl-16 text-sm">{activity.description}</div>
-        <div className="flex pt-4 pr-36">
+        <div className="flex pt-4">
           <div className="pl-16 text-xl pr-6 border-r-2 border-gray-100">
             <label className="text-xs text-zinc-500">Distance</label>
             <br></br>

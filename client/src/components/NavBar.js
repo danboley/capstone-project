@@ -78,6 +78,7 @@ function NavBar({ currentUser, updateUser }) {
               ) : null}
                 </div>
                 <div className="h-full pr-1 px-2 flex justify-center">
+                {/* <NavLink className="nav-link m-2 text-3xl text-orange-600 hover:text-white hover:bg-orange-600" to="/activityform"> */}
                 <NavLink className="nav-link m-2 text-3xl text-orange-600" to="/activityform">
                   {" "}
                   ⨁{" "}

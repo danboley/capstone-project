@@ -58,7 +58,7 @@ function UserProfileActivityCard({ athlete, activity, comments }) {
           <div className="pl-16 text-xl pr-6 border-r-2 border-gray-100">
             <label className="text-xs text-zinc-500">Distance</label>
             <br></br>
-            {activity.distance} mi
+            {activity.distance.toFixed(2)} mi
           </div>
           <div className="text-xl px-6 border-r-2 border-gray-100">
             <label className="text-xs text-zinc-500">Elev Gain</label>
