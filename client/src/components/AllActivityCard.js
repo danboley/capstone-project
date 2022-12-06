@@ -1,52 +1,110 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import moment from 'moment';
+import sub from "../pics/sub.png";
 
 function AllActivityCard({ activity, comments }) {
   const history = useHistory();
 
-  // function pace(activity) {
-  //     return (
-  //     (activity.duration) / (activity.distance)
-  //     )
+  // pace ...
+  // const duration = (activity.duration)
+  // console.log(duration)
+  // const distance = (activity.distance)
+  // console.log(distance)
+
+  // function convertHourstoMinute(duration) {
+  //   let [hours, minutes, seconds] = duration?.split(':');
+  //   return (+hours * 60) + (+minutes);
   // }
 
-//   console.log(comments.map((comment) => comment.comment))
+  // console.log(convertHourstoMinute(duration)/60)
+
+
+  // function paceCalc(duration, distance) {
+  //   const pace = (duration) / (distance)
+  //   return pace
+  //   console.log(pace)
+  // }
+
+  // paceCalc(duration, distance)
+
+  // date and time ...
+  let date = (activity.date)
+  let time = (activity.time)
+
+  function newDate(date) {
+    if (date.slice(8,10) == new Date().getDate()) {
+      return "Today"
+    }
+    else if (date.slice(8,10) == new Date().getDate() - 1) {
+      return "Yesterday"
+    } else {
+      return moment(date).format("MMMM D, YYYY")
+    }
+  }
+
+  function newTime(time) {
+    return moment(time).format('h:mm a')
+  }
+
+  // duration ...
+  let duration = (activity.duration)
+  function newDuration(duration) {
+    if (0 == duration.slice(0,2)) {
+      return duration?.slice(4)
+    } else {
+      return duration
+    }
+  }
 
   return (
-    <div className="pub-activity-card">
-      <img src={activity.user.pro_pic}></img>
-      <div>
-        {activity.user.subscriber}
+    <div className="p-6 m-4 rounded max-w-xl min-w-xl bg-white">
+      <div className="pb-6 border-gray-100 border-b-2">
+      <div className="">
+        <div className="">
+          <div className="float-left">
+          <img className="h-10 w-10 rounded-full float-left cursor-pointer" src={activity.user.pro_pic} onClick={(e) => {history.push(`/athletes/${activity.user.id}`)}}></img>
+            {activity.user.subscriber ? <img className="h-4 w-4 mr-2" src={sub}></img> : null}
+          </div>
+          <div className="pl-16" onClick={(e) => {history.push(`/athletes/${activity.user.id}`)}}>
+            <p className="text-sm font-semibold hover:text-sky-600 cursor-pointer">{activity.user.first_name} {activity.user.last_name}</p>
+            <p className="text-xs text-zinc-500">{newDate(date)} at {newTime(time)} • {activity.location}</p>
+          </div>
+        </div>
       </div>
-      <div>{activity.sport}</div>
-      <div onClick={(e) => {history.push(`/athletes/${activity.user.id}`)}}>
-        {activity.user.first_name} {activity.user.last_name}
+      <div className="pt-4">
+        <div className="float-left text-xs">{activity.sport}</div>
+        <div className="pl-16 font-bold text-xl hover:text-sky-600 cursor-pointer" onClick={(e) => {history.push(`/activities/${activity.id}`)}}>
+          <p>{activity.title}</p>
+          </div>
+        <div className="pl-16 text-sm">{activity.description}</div>
+        <div className="flex pt-4 pr-36">
+          <div className="pl-16 text-xl pr-6 border-r-2 border-gray-100">
+            <label className="text-xs text-zinc-500">Distance</label>
+            <br></br>
+            {activity.distance} mi
+          </div>
+          <div className="text-xl px-6 border-r-2 border-gray-100">
+            <label className="text-xs text-zinc-500">Elev Gain</label>
+            <br></br>
+            {activity.elevation} ft
+          </div>
+          <div className="text-xl pl-6">
+            <label className="text-xs text-zinc-500">Time</label>
+            <br></br>
+            {newDuration(duration)}
+          </div>
+        </div>
+        {/* <div>
+              <label>Pace</label>
+              {} /mi
+          </div> */}
       </div>
-      <div>
-        {activity.date} at {activity.time} • {activity.location}
+      {/* <div>{activity.map}</div> */}
       </div>
-      <div onClick={(e) => {history.push(`/activities/${activity.id}`)}}>{activity.title}</div>
-      <div>{activity.description}</div>
-      <div>
-        <label>Distance</label>
-        {activity.distance} mi
+      <div className="">
+        {comments?.map((comment) => <div className="pt-2 pl-8 mt-4" key={comment.id}>{comment?.user?.name} {comment.comment}</div>)}
       </div>
-      <div>
-        <label>Elev Gain</label>
-        {activity.elevation} ft
-      </div>
-      <div>
-        <label>Time</label>
-        {activity.duration}
-      </div>
-      {/* <div>
-            <label>Pace</label>
-            {} /mi
-        </div> */}
-      <div>{activity.map}</div>
-      
-      {comments?.map((comment) => <div key={comment.id}>{comment.comment}</div>)}
-      {/* <div>{activity.comments}</div> */}
     </div>
   );
 }

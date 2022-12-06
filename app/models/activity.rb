@@ -6,9 +6,9 @@ class Activity < ApplicationRecord
   #   read_attribute(:date).strftime("%D/%M/%Y")
   # end
 
-  def time
-    read_attribute(:time).strftime('%H:%M:%S')
-  end
+  # def time
+  #   read_attribute(:time).strftime('%H:%M:%S')
+  # end
 
   def duration
     read_attribute(:duration).strftime('%Hh %Mm %Ss')
