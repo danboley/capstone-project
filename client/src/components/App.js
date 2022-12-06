@@ -69,7 +69,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 selection:text-white selection:bg-orange-600">
         <NavBar currentUser={currentUser} updateUser={updateUser} />
         <Switch>
           <Route path="/signup" updateUser={updateUser}>

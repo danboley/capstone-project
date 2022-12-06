@@ -57,40 +57,42 @@ function AllActivityCard({ activity, comments }) {
     }
   }
 
+  console.log(activity.user.id)
+
   return (
     <div className="p-6 m-4 rounded max-w-xl min-w-xl bg-white">
       <div>
       <div className="">
         <div className="">
           <div className="float-left">
-          <img className="h-10 w-10 rounded-full float-left" src={activity.user.pro_pic}></img>
+          <img className="h-10 w-10 rounded-full float-left cursor-pointer" src={activity.user.pro_pic} onClick={(e) => {history.push(`/athletes/${activity.user.id}`)}}></img>
             {activity.user.subscriber ? <img className="h-4 w-4 mr-2" src={sub}></img> : null}
           </div>
           <div className="pl-16" onClick={(e) => {history.push(`/athletes/${activity.user.id}`)}}>
-            <p className="text-sm font-semibold">{activity.user.first_name} {activity.user.last_name}</p>
-            <p className="text-xs">{newDate(date)} at {newTime(time)} • {activity.location}</p>
+            <p className="text-sm font-semibold hover:text-sky-600 cursor-pointer">{activity.user.first_name} {activity.user.last_name}</p>
+            <p className="text-xs text-zinc-500">{newDate(date)} at {newTime(time)} • {activity.location}</p>
           </div>
         </div>
       </div>
       <div className="pt-4">
         <div className="float-left text-xs">{activity.sport}</div>
-        <div className="pl-16 font-bold text-xl" onClick={(e) => {history.push(`/activities/${activity.id}`)}}>
+        <div className="pl-16 font-bold text-xl hover:text-sky-600 cursor-pointer" onClick={(e) => {history.push(`/activities/${activity.id}`)}}>
           <p>{activity.title}</p>
           </div>
         <div className="pl-16 text-sm">{activity.description}</div>
         <div className="flex place-content-between pt-4 pr-36">
           <div className="pl-16 text-xl">
-            <label className="text-xs">Distance</label>
+            <label className="text-xs text-zinc-500">Distance</label>
             <br></br>
             {activity.distance} mi
           </div>
           <div className="text-xl">
-            <label className="text-xs">Elev Gain</label>
+            <label className="text-xs text-zinc-500">Elev Gain</label>
             <br></br>
             {activity.elevation} ft
           </div>
           <div className="text-xl">
-            <label className="text-xs">Time</label>
+            <label className="text-xs text-zinc-500">Time</label>
             <br></br>
             {newDuration(duration)}
           </div>
