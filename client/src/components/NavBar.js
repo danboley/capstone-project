@@ -125,12 +125,15 @@ function NavBar({ currentUser, updateUser }) {
             </div>
           </div>
         ) : (
-          <div className="flex justify-center">
-            {/* <div className="branding"><NavLink className="home btn" to="/login"><img src={logo} alt="logo"></img></NavLink></div> */}
-            <NavLink className="h-full text-neutral-600" to="/login">
-              {" "}
-              Log In{" "}
-            </NavLink>
+          <div className="ml-5 h-14 flex">
+            <div className="branding"><NavLink className="home btn" to="/login"><img className="h-auto w-24 mt-4 mr-96 p-0" src={strava} alt="logo"></img></NavLink></div>
+            <div className="mx-24"></div>
+            <button className="ml-96 h-8 mt-3 rounded px-3 font-bold text-xs text-white bg-orange-600">
+              <NavLink className="" to="/login">
+                {" "}
+                Log In{" "}
+              </NavLink>
+            </button>
           </div>
         )}
       </div>
