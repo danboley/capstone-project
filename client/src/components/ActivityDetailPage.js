@@ -152,7 +152,7 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
       <div className="flex ml-32">
         <div className="">
           <div className="block w-36 text-zinc-800 text-base">
-            <div className="py-3 pl-4 pr-6 border-y border-x border-zinc-200 border-l-orange-600 border-l-4">
+            <div className="py-3 pl-4 pr-6 border-y border-x border-zinc-200 border-l-orange-600 border-l-4 hover:bg-slate-50 cursor-pointer">
               Overview
             </div>
             <div className="py-3 pl-4 gap-1 border-b border-x border-zinc-200">
@@ -164,28 +164,28 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
               </div>
               {user?.subscriber ? (
                 <div>
-                  <div className="p-1 pt-2 text-xs zinc-800">
+                  <div className="p-1 pt-2 text-xs zinc-800 hover:bg-slate-50 cursor-pointer">
                     Pace Distrubution
                   </div>
-                  <div className="p-1 text-xs zinc-800">Relative Effort</div>
-                  <div className="p-1 text-xs zinc-800">Heart Rate</div>
+                  <div className="p-1 text-xs zinc-800 hover:bg-slate-50 cursor-pointer">Relative Effort</div>
+                  <div className="p-1 text-xs zinc-800 hover:bg-slate-50 cursor-pointer">Heart Rate</div>
                 </div>
               ) : null}
             </div>
-            <div className="py-3 pl-4 pr-6 border-x border-zinc-200">
+            <div className="py-3 pl-4 pr-6 border-x border-zinc-200 hover:bg-slate-50 cursor-pointer">
               Segments
             </div>
-            <div className="py-3 pl-4 pr-6 border border-zinc-200">Laps</div>
+            <div className="py-3 pl-4 pr-6 border border-zinc-200 hover:bg-slate-50 cursor-pointer">Laps</div>
           </div>
           {currentUser?.id === user?.id ? (
           <div className="flex w-36 mt-2 text-zinc-800 text-base">
             <img
-              className="py-3 px-6 border border-zinc-200"
+              className="py-3 px-6 border border-zinc-200 hover:bg-slate-50 cursor-pointer"
               src={pencil}
               onClick={expandForm}
             ></img>
             <img
-              className="py-3 px-5 border-y border-r border-zinc-200"
+              className="py-3 px-5 border-y border-r border-zinc-200 hover:bg-slate-50 cursor-pointer"
               src={elips}
               onClick={handleDeleteInitial}
             ></img>
@@ -194,7 +194,7 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
         </div>
             
         <div className="pl-8 ">
-        <div className="flex pl-4 pt-2 border-zinc-200 border-x border-t pb-2 gap-2 text-xl ">
+        <div className="flex pl-4 pt-2 border-zinc-200 border-x border-t pb-2 gap-2 text-xl bg-slate-50">
               {user?.subscriber ? <img className="w-6 h-6 mr-2" src={sub}></img> : null}
               <div className="cursor-pointer hover:underline hover:text-sky-600"
                 onClick={(e) => {

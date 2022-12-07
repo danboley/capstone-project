@@ -22,9 +22,13 @@ function SideBar({ currentUser }) {
           <img className="w-6 h-6 fixed left-56 top-20" src={sub}></img>
         ) : null}
       </div>
-      <div className="flex justify-center gap-2 text-2xl hover:text-sky-600 cursor-pointer pt-8 pb-4 leading-tight">
-        <div className="">{currentUser.first_name}</div>
-        <div className="">{currentUser.last_name}</div>
+      <div className="justify-center text-2xl hover:text-sky-600 cursor-pointer mt-8 mb-4 leading-tight">
+        <NavLink to="/myprofile">
+          <div className="flex gap-2 ">
+            <div>{currentUser.first_name}</div>
+            <div>{currentUser.last_name}</div>
+          </div>
+        </NavLink>
       </div>
       <div className="pt-2 flex justify-center">
         <div className="text-xl px-4 border-r border-gray-100">

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, useHistory } from "react-router-dom";
-// import logo from "../pics/logo.png";
+import arrow from "../pics/arrow.png";
 import strava from "../pics/strava.png";
 
 function NavBar({ currentUser, updateUser }) {
@@ -73,20 +73,20 @@ function NavBar({ currentUser, updateUser }) {
                   to="/myprofile"
                 >
                   <img
-                    className="rounded-full flex justify-center h-8 w-8 m-3"
+                    className="rounded-full h-8 w-8 mt-3"
                     src={currentUser.pro_pic}
                   ></img>
                 </NavLink>
                 <div>
-                  <div
-                    className=" text-neutral-600 hover:text-orange-600 focus:text-black pr-1 px-2 grid m-5"
+                  <img
+                    className=" text-neutral-600 hover:text-orange-600 focus:text-black pr-1 px-2 ml-1 my-5 h-3"
                     onClick={handleDropdown}
+                    src={arrow}
                   >
-                    ▼
-                  </div>
+                  </img>
                   {dropdown ? (
-                    <div>
-                      <div className="pt-4 px-4 flex bg-white border-solid border-gray-100 border-x-2 border-t">
+                    <div className="pt-1">
+                      <div className="py-3 px-4 bg-white border-solid border-gray-100 border-x-2 border-t hover:bg-slate-50">
                         <NavLink
                           className="h-full text-neutral-600 hover:text-orange-600"
                           to="/myprofile"
@@ -95,10 +95,10 @@ function NavBar({ currentUser, updateUser }) {
                           My Profile
                         </NavLink>
                       </div>
-                      <div className="pt-4 px-4 h-full text-neutral-600 hover:text-orange-600 cursor-pointer flex bg-white border-solid border-gray-100 border-x-2">
+                      <div className="py-3 px-4 h-full text-neutral-600 hover:text-orange-600 cursor-pointer flex bg-white border-solid border-gray-100 border-x-2 hover:bg-slate-50">
                         Settings
                       </div>
-                      <div className="pt-4 pb-4 px-4 flex bg-white border-solid border-gray-100 border-x-2 border-b-2">
+                      <div className="py-3 px-4 flex bg-white border-solid border-gray-100 border-x-2 border-b-2 hover:bg-slate-50">
                         <NavLink
                           className="h-full text-neutral-600 hover:text-orange-600"
                           to="/"

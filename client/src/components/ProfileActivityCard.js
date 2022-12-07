@@ -1,7 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import moment from "moment";
-import sub from '../pics/sub.png'
+import sub from '../pics/sub.png';
+import arrow from '../pics/arrow.png';
 
 function ProfileActivityCard({ currentUser, activity, comments }) {
   const history = useHistory();
@@ -42,6 +43,7 @@ function ProfileActivityCard({ currentUser, activity, comments }) {
             {currentUser.subscriber ? <img className="h-4 w-4 mr-2" src={sub}></img> : null}
           </div>
           <div className="pl-16">
+            <img src={arrow} className="h-3 float-right"></img>
             <p className="text-sm font-semibold hover:text-sky-600 cursor-pointer" onClick={(e) => {history.push(`/athletes/${activity.user.id}`)}}>{currentUser.first_name} {currentUser.last_name}</p>
             <p className="text-xs text-zinc-500">{newDate(date)} at {newTime} • {activity.location}</p>
           </div>

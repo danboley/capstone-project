@@ -101,12 +101,12 @@ function ActivityForm({ currentUser, addActivity }) {
     <div className="pt-14 mt-8 mb-9 pl-48 max-w-full flex bg-white">
       <div className="flex ml-32">
         <div className="block w-40 text-zinc-800 text-base">
-          <div className="py-3 pl-4 pr-6 border border-zinc-200">Device</div>
-          <div className="py-3 pl-4 pr-6 border-b border-x border-zinc-200">File</div>
-          <div className="py-3 pl-4 pr-6 border-x border-zinc-200 border-l-orange-600 border-l-4">
+          <div className="py-3 pl-4 pr-6 border border-zinc-200 hover:bg-slate-50 cursor-pointer">Device</div>
+          <div className="py-3 pl-4 pr-6 border-b border-x border-zinc-200 hover:bg-slate-50 cursor-pointer">File</div>
+          <div className="py-3 pl-4 pr-6 border-x border-zinc-200 border-l-orange-600 border-l-4 hover:bg-slate-50 cursor-pointer">
             Manual
           </div>
-          <div className="py-3 pl-4 pr-6 border border-zinc-200">
+          <div className="py-3 pl-4 pr-6 border border-zinc-200 hover:bg-slate-50 cursor-pointer">
             Mobile
           </div>
         </div>
