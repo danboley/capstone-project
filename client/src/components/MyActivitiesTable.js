@@ -29,7 +29,7 @@ function MyActivitiesTable({ id, activity, sport, date, title, duration, distanc
     }
 
   return (
-      <tr className="table-row" key={id}>
+      <tr className="table-row bg-slate-50" key={id}>
           <td className="table-cell px-4 py-2 text-left text-sm">{sport}</td>
               <td className="table-cell px-4 py-2 text-left text-sm">{newDate}</td>
               <td className="table-cell px-4 py-2 text-left text-sm text-sky-600 hover:underline" onClick={(e) => {history.push(`/activities/${id}`)}}>{title}</td>

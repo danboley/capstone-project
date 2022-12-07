@@ -4,7 +4,7 @@ import AllActivityCard from "./AllActivityCard";
 // Dashboard
 function AllActivities({ currentUser, activities }) {
   return (
-    <div className="grid px-48">
+    <div className="grid px-32">
       <div className=" px-48">
         <div className="ml-2 mt-2 text-lg">
           <div className="hover:bg-white cursor-pointer w-max p-2">
