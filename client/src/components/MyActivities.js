@@ -18,9 +18,9 @@ function MyActivities({ currentUser, activities, deleteActivity }) {
      <div className="float-left px-20">My Activities</div>
      {/* <Search /> */}
      {/* <Filter /> */}
-     <div className="">
      <div>
-       <table className="">
+     <div>
+       <table>
          <thead>
            <tr className="table-row text-xs">
              <th className="table-cell px-4 py-2 text-left">Sport</th>
