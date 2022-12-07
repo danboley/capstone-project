@@ -13,6 +13,7 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [expand, setExpand] = useState(false);
+  const [toggleComments, setToggleComments] = useState(false);
   const { id } = useParams();
   const history = useHistory();
 
@@ -78,6 +79,10 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
 
   function expandForm() {
     setExpand((prev) => !prev);
+  }
+
+  function expandComments() {
+    setToggleComments((prev) => !prev);
   }
 
   function handleActivityEdit(e) {
@@ -203,8 +208,11 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
               >
                 {user?.first_name} {user?.last_name}
               </div>
-              <div> - </div>
-              <div>{sport}</div>
+              <div className=""> - </div>
+              <div className="">{sport}</div>
+              <div className="ml-96">
+                <button className="ml-40 text-xs border p-1 hover:bg-white" onClick={expandComments}>Comments</button>
+              </div>
             </div>
             
                 
@@ -292,12 +300,16 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
               </div>
               </div>
             </div>
-          
-          <div className="comment-div">
-            {comments?.map((comment) => (
-              <div key={comment.id}>{comment.comment}</div>
-            ))}
+            {toggleComments && (
+          <div className="comment-div border-b border-x p-2">
+            <div className="">Comments</div>
+            <div>
+                {comments?.map((comment) => (
+                <div className="text-xs text-neutral-800 pl-4 my-2" key={comment.id}>{comment.comment}</div>
+                ))}
+            </div>
           </div>
+            )}
           {/* <div className="act-det-map">
             <div>map</div>
         </div> */}

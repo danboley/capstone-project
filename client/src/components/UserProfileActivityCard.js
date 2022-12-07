@@ -81,7 +81,7 @@ function UserProfileActivityCard({ athlete, activity, comments }) {
       {/* <div>{activity.map}</div> */}
       </div>
       <div className="">
-        {comments?.map((comment) => <div className="pt-2 pl-8 mt-4" key={comment.id}>{comment?.user?.name} {comment.comment}</div>)}
+        {comments?.map((comment) => <div className="text-xs text-neutral-800 pt-2 pl-8 mt-4" key={comment.id}>{comment?.user?.name} {comment.comment}</div>)}
       </div>
     </div>
   );
