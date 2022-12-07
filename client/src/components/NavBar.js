@@ -6,7 +6,7 @@ import strava from "../pics/strava.png";
 function NavBar({ currentUser, updateUser }) {
   const [isLoading, setIsLoading] = useState(false);
   const [dropdown, setDropdown] = useState(false);
-  const [button, setButton] = useState(false);
+  const [button, setButton] = useState(true);
 
   const history = useHistory();
 
