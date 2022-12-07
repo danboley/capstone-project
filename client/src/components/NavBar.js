@@ -82,8 +82,7 @@ function NavBar({ currentUser, updateUser }) {
                     className=" text-neutral-600 hover:text-orange-600 focus:text-black pr-1 px-2 ml-1 my-5 h-3"
                     onClick={handleDropdown}
                     src={arrow}
-                  >
-                  </img>
+                  ></img>
                   {dropdown ? (
                     <div className="pt-1">
                       <div className="py-3 px-4 bg-white border-solid border-gray-100 border-x-2 border-t hover:bg-slate-50">
@@ -126,8 +125,16 @@ function NavBar({ currentUser, updateUser }) {
           </div>
         ) : (
           <div className="ml-5 h-14 flex">
-            <div className="branding"><NavLink className="home btn" to="/login"><img className="h-auto w-24 mt-4 mr-96 p-0" src={strava} alt="logo"></img></NavLink></div>
-            <div className="mx-24"></div>
+            <div className="branding">
+              <NavLink className="home btn" to="/login">
+                <img
+                  className="h-auto w-24 mt-4 mr-96"
+                  src={strava}
+                  alt="logo"
+                ></img>
+              </NavLink>
+            </div>
+            <div className="mx-40"></div>
             <button className="ml-96 h-8 mt-3 rounded px-3 font-bold text-xs text-white bg-orange-600">
               <NavLink className="" to="/login">
                 {" "}

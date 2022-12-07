@@ -51,33 +51,110 @@ function Signup({ updateUser }) {
   }
 
   return (
-    <div className="signup">
-        <form className="signup-form" onSubmit={onSubmit}>
-            <label> Email: </label>
-            <input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-            <label> First Name: </label>
-            <input type="text" name="first_name" value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
-            <label> Last Name: </label>
-            <input type="text" name="last_name" value={lastName} onChange={(e) => setLastName(e.target.value)}/>
-            <label> Profile Picture: </label>
-            <input type="text" name="pro_pic" value={proPic} onChange={(e) => setProPic(e.target.value)}/>
-            <label> Location: </label>
-            <input type="text" name="location" value={location} onChange={(e) => setLocation(e.target.value)}/>
-            <label> Account Type: </label>
-            <select name="subscription" value={subscriber} onChange={(e) => setSubscriber(e.target.value)}>
-                <option value="">Premium</option>
-                <option value="">Free</option>
-            </select>
-            <label> Password: </label>
-            <input type="text" name="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-            <button type="submit">
-                Sign Up
-            </button>
+    <div className="py-32 px-96 text-center">
+      <div>
+        <div className="mx-96 p-4 bg-black bg-opacity-80 text-4xl text-white">
+          Join Strava today, it's Free.
+        </div>
+        <form className="mx-96 p-4 bg-black bg-opacity-70" onSubmit={onSubmit}>
+          <input
+            className="border-stone-500 h-11 w-72 border rounded text-center text-sm"
+            type="text"
+            name="email"
+            placeholder="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <br></br>
+          <br></br>
+          <input
+            className="border-stone-500 h-11 w-72 border rounded text-center text-sm"
+            type="text"
+            name="first_name"
+            placeholder="first name"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+          <br></br>
+          <br></br>
+          <input
+            className="border-stone-500 h-11 w-72 border rounded text-center text-sm"
+            type="text"
+            name="last_name"
+            placeholder="last name"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+          <br></br>
+          <br></br>
+          <input
+            className="border-stone-500 h-11 w-72 border rounded text-center text-sm"
+            type="text"
+            name="pro_pic"
+            placeholder="profile picture"
+            value={proPic}
+            onChange={(e) => setProPic(e.target.value)}
+          />
+          <br></br>
+          <br></br>
+          <input
+            className="border-stone-500 h-11 w-72 border rounded text-center text-sm"
+            type="text"
+            name="location"
+            placeholder="location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          />
+          <br></br>
+          <br></br>
+          {/* <label className="text-white mr-2"> Account Type: </label> */}
+          <select
+            className="rounded h-11 w-72 text-center"
+            name="subscription"
+            value={subscriber}
+            onChange={(e) => setSubscriber(e.target.value)}
+          >
+            <option>Account Type</option>
+            <option value="">Premium</option>
+            <option>Free</option>
+          </select>
+          <br></br>
+          <br></br>
+          <input
+            className="border-stone-500 h-11 w-72 border rounded text-center text-sm"
+            type="text"
+            name="password"
+            placeholder="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <br></br>
+          <br></br>
+          <button
+            className="text-white text-sm font-bold rounded h-11 w-72 bg-orange-600"
+            type="submit"
+          >
+            Sign Up
+          </button>
+          <br></br>
         </form>
-        <label>{isLoading ? "Loading..." : null}</label>
-        {errors ? <div className="errors">{errors} </div> : null}
-        <div> Already a Member? </div>
-        <button onClick={loginPush}> Log In </button>
+        <div className="bg-black bg-opacity-70 mx-96 pt-2">
+          <div>
+            {isLoading ? (
+              <div className="text-white text-sm">"Loading..."</div>
+            ) : null}
+            {errors ? <div className="text-white text-sm">{errors}</div> : null}
+          </div>
+        </div>
+        <div className=" text-white text-sm mx-96 p-4 bg-black bg-opacity-70 text-center">
+          <div className="flex gap-2 justify-center items-center pb-4">
+            <div> Already a Member? </div>
+            <button onClick={loginPush}> Log In </button>
+          </div>
+        </div>
+        <br></br>
+        <br></br>
+      </div>
     </div>
   );
 }
