@@ -42,14 +42,14 @@ function UserProfilePage() {
     <div className="pt-14 max-w-full flex justify-center">
       <div className="w-4/6">
         <div className="flex">
-          <div className=""><img className="border-r-2 border-white w-80 h-80" src={athlete.pro_pic}></img></div>
-          <div className=""><img className="border-r-2 border-white w-80 h-80" src={athlete.pro_pic}></img></div>
-          <div className=""><img className="border-r-2 border-white w-80 h-80" src={athlete.pro_pic}></img></div>
+          <div className=""><img className="border-r border-white w-80 h-80" src={athlete.pro_pic}></img></div>
+          <div className=""><img className="border-r border-white w-80 h-80" src={athlete.pro_pic}></img></div>
+          <div className=""><img className="border-r border-white w-80 h-80" src={athlete.pro_pic}></img></div>
           <div className=""><img className="w-80 h-80" src={athlete.pro_pic}></img></div>
         </div>
         <div className="relative -top-16">
           <div className="px-8 pb-4">
-            <img className="rounded-full border-2 border-slate-50 w-32 h-32" src={athlete.pro_pic}></img>
+            <img className="rounded-full border border-slate-50 w-32 h-32" src={athlete.pro_pic}></img>
           </div>
           <div className="text-3xl px-4 pb-4 font-bold">
             <h1>{athlete.first_name} {athlete.last_name}</h1>

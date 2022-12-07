@@ -34,7 +34,7 @@ function ProfileActivityCard({ currentUser, activity, comments }) {
 
   return (
 <div className="p-6 m-4 rounded max-w-3xl min-w-3xl bg-white">
-      <div className="pb-6 border-gray-100 border-b-2">
+      <div className="pb-6 border-gray-100 border-b">
       <div className="">
         <div className="">
           <div className="float-left">
@@ -54,12 +54,12 @@ function ProfileActivityCard({ currentUser, activity, comments }) {
           </div>
         <div className="pl-16 text-sm">{activity.description}</div>
         <div className="flex pt-4 pr-36">
-          <div className="pl-16 text-xl pr-6 border-r-2 border-gray-100">
+          <div className="pl-16 text-xl pr-6 border-r border-gray-100">
             <label className="text-xs text-zinc-500">Distance</label>
             <br></br>
             {activity.distance.toFixed(2)} mi
           </div>
-          <div className="text-xl px-6 border-r-2 border-gray-100">
+          <div className="text-xl px-6 border-r border-gray-100">
             <label className="text-xs text-zinc-500">Elev Gain</label>
             <br></br>
             {activity.elevation} ft

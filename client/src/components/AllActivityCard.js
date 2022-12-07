@@ -59,15 +59,15 @@ function AllActivityCard({ activity, comments }) {
 
   return (
     <div className="p-6 m-4 rounded max-w-xl min-w-xl bg-white">
-      <div className="pb-6 border-gray-100 border-b-2">
+      <div className="pb-6 border-gray-100 border-b">
       <div className="">
         <div className="">
           <div className="float-left">
           <img className="h-10 w-10 rounded-full float-left cursor-pointer" src={activity.user.pro_pic} onClick={(e) => {history.push(`/athletes/${activity.user.id}`)}}></img>
             {activity.user.subscriber ? <img className="h-4 w-4 mr-2" src={sub}></img> : null}
           </div>
-          <div className="pl-16" onClick={(e) => {history.push(`/athletes/${activity.user.id}`)}}>
-            <p className="text-sm font-semibold hover:text-sky-600 cursor-pointer">{activity.user.first_name} {activity.user.last_name}</p>
+          <div className="pl-16">
+            <p className="text-sm font-semibold hover:text-sky-600 cursor-pointer onClick={(e) => {history.push(`/athletes/${activity.user.id}`)}}">{activity.user.first_name} {activity.user.last_name}</p>
             <p className="text-xs text-zinc-500">{newDate(date)} at {newTime(time)} • {activity.location}</p>
           </div>
         </div>
@@ -79,12 +79,12 @@ function AllActivityCard({ activity, comments }) {
           </div>
         <div className="pl-16 text-sm">{activity.description}</div>
         <div className="flex pt-4">
-          <div className="pl-16 text-xl pr-6 border-r-2 border-gray-100">
+          <div className="pl-16 text-xl pr-6 border-r border-gray-100">
             <label className="text-xs text-zinc-500">Distance</label>
             <br></br>
             {activity.distance} mi
           </div>
-          <div className="text-xl px-6 border-r-2 border-gray-100">
+          <div className="text-xl px-6 border-r border-gray-100">
             <label className="text-xs text-zinc-500">Elev Gain</label>
             <br></br>
             {activity.elevation} ft

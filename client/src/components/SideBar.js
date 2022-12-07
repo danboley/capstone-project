@@ -27,14 +27,14 @@ function SideBar({ currentUser }) {
         <div className="">{currentUser.last_name}</div>
       </div>
       <div className="pt-2 flex justify-center">
-        <div className="text-xl px-4 border-r-2 border-gray-100">
+        <div className="text-xl px-4 border-r border-gray-100">
           <label className="text-xs text-neutral-600">Following</label>
           <br></br>
           {/* <div className="ml-4 ">{currentUser?.following?.length}</div> */}
           <div className="ml-4 hover:text-sky-600 cursor-pointer">12</div>
         </div>
 
-        <div className="text-xl px-4 border-r-2 border-gray-100">
+        <div className="text-xl px-4 border-r border-gray-100">
           <label className="text-xs text-neutral-600">Followers</label>
           <br></br>
           {/* <div className="ml-4">{currentUser?.followers?.length}</div> */}

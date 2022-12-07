@@ -32,7 +32,7 @@ function NavBar({ currentUser, updateUser }) {
       id="global-header"
       className="fixed top-0 left-0 right-0  bg-gray-100 h-14 leading-4 text-sm z-10"
     >
-      <div className="h-14 relative border-b-2 bg-white border-gray-100 px-72">
+      <div className="h-14 relative border-b bg-white border-gray-100 px-72">
         {currentUser ? (
           <div className="">
             <div className="ml-5 float-left relative h-14 flex">
@@ -86,7 +86,7 @@ function NavBar({ currentUser, updateUser }) {
                   </div>
                   {dropdown ? (
                     <div>
-                      <div className="pt-4 px-4 flex bg-white border-solid border-gray-100 border-r-2 border-l-2">
+                      <div className="pt-4 px-4 flex bg-white border-solid border-gray-100 border-x-2 border-t">
                         <NavLink
                           className="h-full text-neutral-600 hover:text-orange-600"
                           to="/myprofile"
@@ -95,10 +95,10 @@ function NavBar({ currentUser, updateUser }) {
                           My Profile
                         </NavLink>
                       </div>
-                      <div className="pt-4 px-4 h-full text-neutral-600 hover:text-orange-600 cursor-pointer flex bg-white border-solid border-gray-100 border-r-2 border-l-2">
+                      <div className="pt-4 px-4 h-full text-neutral-600 hover:text-orange-600 cursor-pointer flex bg-white border-solid border-gray-100 border-x-2">
                         Settings
                       </div>
-                      <div className="pt-4 pb-4 px-4 flex bg-white border-solid border-gray-100 border-r-2 border-l-2 border-b-2">
+                      <div className="pt-4 pb-4 px-4 flex bg-white border-solid border-gray-100 border-x-2 border-b-2">
                         <NavLink
                           className="h-full text-neutral-600 hover:text-orange-600"
                           to="/"

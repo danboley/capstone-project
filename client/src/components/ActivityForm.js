@@ -99,14 +99,14 @@ function ActivityForm({ currentUser, addActivity }) {
 
   return (
     <div className="pt-14 mt-8 mb-9 pl-48 max-w-full flex bg-white">
-      <div className="flex">
-        <div className="block w-40 border-2 border-gray-100 text-zinc-800 text-base">
-          <div className="py-3 pl-4 pr-16">Device</div>
-          <div className="py-3 pl-4 pr-6 border-t-2 border-gray-100">File</div>
-          <div className="py-3 pl-4 pr-6 border-t-2 border-gray-100 border-l-orange-600 border-l-2">
+      <div className="flex ml-32">
+        <div className="block w-40 text-zinc-800 text-base">
+          <div className="py-3 pl-4 pr-6 border border-zinc-200">Device</div>
+          <div className="py-3 pl-4 pr-6 border-b border-x border-zinc-200">File</div>
+          <div className="py-3 pl-4 pr-6 border-x border-zinc-200 border-l-orange-600 border-l-4">
             Manual
           </div>
-          <div className="py-3 pl-4 pr-6 border-t-2 border-gray-100">
+          <div className="py-3 pl-4 pr-6 border border-zinc-200">
             Mobile
           </div>
         </div>
@@ -115,19 +115,19 @@ function ActivityForm({ currentUser, addActivity }) {
             Manual Entry
           </h1>
           <form className="new-activity-form" onSubmit={handleActivitySubmit}>
-            <div className="flex border-b-2 border-gray-100 pb-8">
+            <div className="flex border-b border-zinc-200 pb-8">
               <div className="pr-8">
                 <label className="text-xs text-neutral-800 pr-24">
                   Distance
                 </label>
                 <br></br>
                 <input
-                  className="mt-1 h-9 border-2 border-zinc-200 text-center text-stone-500"
+                  className="mt-1 h-9 border border-zinc-200 text-center text-stone-500"
                   type="text"
                   value={activityDistance}
                   onChange={(e) => setActivityDistance(e.target.value)}
                 />
-                <select className="text-sm text-neutral-800 mt-1 h-9 border-r-2 border-y-2 border-zinc-200 pl-1">
+                <select className="text-sm text-neutral-800 mt-1 h-9 border-r border-y border-zinc-200 pl-1">
                   <option>miles</option>
                   <option>kilometers</option>
                   <option>meters</option>
@@ -138,7 +138,7 @@ function ActivityForm({ currentUser, addActivity }) {
                 <label className="text-xs text-neutral-800">Duration</label>
                 <br></br>
                 <input
-                  className="mt-1 h-9 w-60 border-2 border-zinc-200 text-center text-stone-500"
+                  className="mt-1 h-9 w-60 border border-zinc-200 text-center text-stone-500"
                   type="text"
                   placeholder="hh:mm:ss"
                   value={activityDuration}
@@ -149,12 +149,12 @@ function ActivityForm({ currentUser, addActivity }) {
                 <label className="text-xs text-neutral-800">Elevation</label>
                 <br></br>
                 <input
-                  className="mt-1 h-9 border-2 border-zinc-200 text-center text-stone-500"
+                  className="mt-1 h-9 border border-zinc-200 text-center text-stone-500"
                   type="text"
                   value={activityElevation}
                   onChange={(e) => setActivityElevation(e.target.value)}
                 ></input>
-                <select className="text-sm text-neutral-800 h-9 border-r-2 border-y-2 border-zinc-200 pl-1">
+                <select className="text-sm text-neutral-800 h-9 border-r border-y border-zinc-200 pl-1">
                   <option>feet</option>
                   <option>meters</option>
                 </select>
@@ -165,7 +165,7 @@ function ActivityForm({ currentUser, addActivity }) {
                 <label className="text-xs text-neutral-800">Sport</label>
                 <br></br>
                 <select
-                  className="mt-1 h-9 w-64 border-r-2 border-2 border-zinc-200 pl-1 text-neutral-800"
+                  className="mt-1 h-9 w-64 border-r border border-zinc-200 pl-1 text-neutral-800"
                   onChange={(e) => {
                     setActivitySport(e.target.value);
                   }}
@@ -190,13 +190,13 @@ function ActivityForm({ currentUser, addActivity }) {
                 <label className="text-xs text-neutral-800">Date & Time</label>
                 <br></br>
                 <input
-                  className="text-stone-500 mt-1 h-9 border-2 border-zinc-200 text-center"
+                  className="text-stone-500 mt-1 h-9 border border-zinc-200 text-center"
                   type="date"
                   value={activityDate}
                   onChange={(e) => setActivityDate(e.target.value)}
                 ></input>
                 <input
-                  className="text-stone-500 mt-1 h-9 border-r-2 border-y-2 border-zinc-200 text-center"
+                  className="text-stone-500 mt-1 h-9 border-r border-y border-zinc-200 text-center"
                   type="time"
                   value={activityTime}
                   onChange={(e) => setActivityTime(e.target.value)}
@@ -208,7 +208,7 @@ function ActivityForm({ currentUser, addActivity }) {
                 <label className="text-xs text-neutral-800">Title</label>
                 <br></br>
                 <input
-                  className="mt-1 h-9 w-96 border-2 border-zinc-200 text-stone-500 pl-2"
+                  className="mt-1 h-9 w-96 border border-zinc-200 text-stone-500 pl-2"
                   type="text"
                   placeholder="Morning Run"
                   value={activityTitle}
@@ -216,12 +216,12 @@ function ActivityForm({ currentUser, addActivity }) {
                 ></input>
               </div>
             </div>
-            <div className="flex border-b-2 border-gray-100 pt-6 pb-8">
+            <div className="flex border-b border-zinc-200 pt-6 pb-8">
               <div>
                 <label className="text-xs text-neutral-800">Description</label>
                 <br></br>
                 <textarea
-                  className="mt-1 h-24 w-96 resize-y border-2 border-zinc-200 text-stone-500 p-2"
+                  className="mt-1 h-24 w-96 resize-y border border-zinc-200 text-stone-500 p-2"
                   type="textbox"
                   placeholder="How'd it go? Share more about your activity and use @ to tag someone."
                   value={activityDescription}
@@ -229,21 +229,33 @@ function ActivityForm({ currentUser, addActivity }) {
                 ></textarea>
               </div>
             </div>
-            <div className="flex border-b-2 border-gray-100 pt-6 pb-8">
-              <div>
+            <div className="flex border-b border-zinc-200 pt-6 pb-8">
+              <div className="pr-8">
                 <label className="text-xs text-neutral-800">Location</label>
                 <br></br>
                 <input
-                  className="mt-1 h-9 w-64 border-2 border-zinc-200 text-stone-500 pl-2"
+                  className="mt-1 h-9 w-64 border border-zinc-200 text-stone-500 pl-2"
                   type="text"
                   value={activityLocation}
                   onChange={(e) => setActivityLocation(e.target.value)}
                 ></input>
-                {/* <label className="text-xs text-neutral-800">.gpx File</label>
-                      <br></br>
-                      <input type="file" value={activityMap} onChange={(e) => setActivityMap(e.target.value)}></input> */}
+              </div>
+              <div>
+              <label className="text-xs text-neutral-800">Photo</label>
+                <br></br>
+                <input
+                  className="mt-1 h-9 w-64 border border-zinc-200 text-stone-500 pl-2"
+                  type="text"
+                  // value={activityPhoto}
+                  // onChange={(e) => setActivityPhoto(e.target.value)}
+                ></input>
               </div>
             </div>
+            {/* <div>
+            <label className="text-xs text-neutral-800">.gpx File</label>
+                <br></br>
+                <input type="file" value={activityMap} onChange={(e) => setActivityMap(e.target.value)}></input>
+            </div> */}
             <div className="flex pt-6 pb-8 gap-4">
               <button
                 className="text-sm font-bold text-white bg-orange-600 rounded p-2"
