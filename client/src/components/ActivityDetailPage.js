@@ -137,18 +137,16 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
   }
 
   function newTime(time) {
-    return moment(time).format('h:mm a')
+    return moment(time).format("h:mm a");
   }
 
   function newDate(date) {
-    if (date?.slice(8,10) == new Date().getDate()) {
-      return "Today"
-    }
-    else if (date?.slice(8,10) == new Date().getDate() - 1) {
-      return "Yesterday"
-    } 
-    else {
-      return moment(date).format("on dddd, MMMM D, YYYY")
+    if (date?.slice(8, 10) == new Date().getDate()) {
+      return "Today";
+    } else if (date?.slice(8, 10) == new Date().getDate() - 1) {
+      return "Yesterday";
+    } else {
+      return moment(date).format("on dddd, MMMM D, YYYY");
     }
   }
 
@@ -172,50 +170,65 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
                   <div className="p-1 pt-2 text-xs zinc-800 hover:bg-slate-50 cursor-pointer">
                     Pace Distrubution
                   </div>
-                  <div className="p-1 text-xs zinc-800 hover:bg-slate-50 cursor-pointer">Relative Effort</div>
-                  <div className="p-1 text-xs zinc-800 hover:bg-slate-50 cursor-pointer">Heart Rate</div>
+                  <div className="p-1 text-xs zinc-800 hover:bg-slate-50 cursor-pointer">
+                    Relative Effort
+                  </div>
+                  <div className="p-1 text-xs zinc-800 hover:bg-slate-50 cursor-pointer">
+                    Heart Rate
+                  </div>
                 </div>
               ) : null}
             </div>
             <div className="py-3 pl-4 pr-6 border-x border-zinc-200 hover:bg-slate-50 cursor-pointer">
               Segments
             </div>
-            <div className="py-3 pl-4 pr-6 border border-zinc-200 hover:bg-slate-50 cursor-pointer">Laps</div>
+            <div className="py-3 pl-4 pr-6 border border-zinc-200 hover:bg-slate-50 cursor-pointer">
+              Laps
+            </div>
           </div>
           {currentUser?.id === user?.id ? (
-          <div className="flex w-36 mt-2 text-zinc-800 text-base">
-            <img
-              className="py-3 px-6 border border-zinc-200 hover:bg-slate-50 cursor-pointer"
-              src={pencil}
-              onClick={expandForm}
-            ></img>
-            <img
-              className="py-3 px-5 border-y border-r border-zinc-200 hover:bg-slate-50 cursor-pointer"
-              src={elips}
-              onClick={handleDeleteInitial}
-            ></img>
-          </div>
+            <div className="flex w-36 mt-2 text-zinc-800 text-base">
+              <img
+                className="py-3 px-6 border border-zinc-200 hover:bg-slate-50 cursor-pointer"
+                alt="edit activity"
+                src={pencil}
+                onClick={expandForm}
+              ></img>
+              <img
+                className="py-3 px-5 border-y border-r border-zinc-200 hover:bg-slate-50 cursor-pointer"
+                alt="delete activity"
+                src={elips}
+                onClick={handleDeleteInitial}
+              ></img>
+            </div>
           ) : null}
         </div>
-            
+
         <div className="pl-8 ">
-        <div className="flex pl-4 pt-2 border-zinc-200 border-x border-t pb-2 gap-2 text-xl bg-slate-50">
-              {user?.subscriber ? <img className="w-6 h-6 mr-2" src={sub}></img> : null}
-              <div className="cursor-pointer hover:underline hover:text-sky-600"
-                onClick={(e) => {
-                  history.push(`/athletes/${user.id}`);
-                }}
-              >
-                {user?.first_name} {user?.last_name}
-              </div>
-              <div className=""> - </div>
-              <div className="">{sport}</div>
-              <div className="ml-96">
-                <button className="ml-40 text-xs border p-1 hover:bg-white" onClick={expandComments}>Comments</button>
-              </div>
+          <div className="flex pl-4 pt-2 border-zinc-200 border-x border-t pb-2 gap-2 text-xl bg-slate-50">
+            {user?.subscriber ? (
+              <img className="w-6 h-6 mr-2" src={sub}></img>
+            ) : null}
+            <div
+              className="cursor-pointer hover:underline hover:text-sky-600"
+              onClick={(e) => {
+                history.push(`/athletes/${user.id}`);
+              }}
+            >
+              {user?.first_name} {user?.last_name}
             </div>
-            
-                
+            <div className=""> - </div>
+            <div className="">{sport}</div>
+            <div className="ml-96 mr-4">
+              <button
+                className="ml-40 text-xs border p-1 hover:bg-white"
+                onClick={expandComments}
+              >
+                Comments
+              </button>
+            </div>
+          </div>
+
           <div className="flex p-4 border-zinc-200 border">
             {/* <div className="flex pr-96 border-zinc-200 border-b-2 pb-4 gap-2 text-xl bg-red-500">
               {!user?.subscriber ? <img className="w-6 h-6 mr-2" src={sub}></img> : null}
@@ -231,23 +244,26 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
             </div> */}
             <div className="flex pt-4 pr-24 pb-8 act-det-left border-zinc-200 border-r">
               <div className="flex">
-                <img className="h-24 w-24 rounded-full" src={user?.pro_pic}></img>
+                <img
+                  className="h-24 w-24 rounded-full"
+                  src={user?.pro_pic}
+                ></img>
               </div>
               <div className="">
                 <div className="pl-4 text-stone-500 text-xs">
-                    {newTime(time)} {newDate(date)} • {location}
+                  {newTime(time)} {newDate(date)} • {location}
                 </div>
                 <div className="pl-4 text-3xl leading-8 font-bold">
-                    <h1>{title}</h1>
+                  <h1>{title}</h1>
                 </div>
-                
+
                 <div className="pl-4 pt-2 text-sm">
-                    <h3>{description}</h3>
+                  <h3>{description}</h3>
                 </div>
                 <div className="pl-4 pt-6">
-                    <img className="w-16 h-16" src={user?.pro_pic}></img>
+                  <img className="w-16 h-16" src={user?.pro_pic}></img>
                 </div>
-                </div>
+              </div>
             </div>
             <div className="act-det-right pl-8">
               <div className="flex pb-4 border-b border-zinc-200">
@@ -298,67 +314,100 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
                   </div>
                 </div>
               </div>
-              </div>
-            </div>
-            {toggleComments && (
-          <div className="comment-div border-b border-x p-2">
-            <div className="">Comments</div>
-            <div>
-                {comments?.map((comment) => (
-                <div className="text-xs text-neutral-800 pl-4 my-2" key={comment.id}>{comment.comment}</div>
-                ))}
             </div>
           </div>
-            )}
+          {toggleComments && (
+            <div className="comment-div border-b border-x p-2">
+              <div className="">Comments</div>
+              <div>
+                {comments?.map((comment) => (
+                  <div
+                    className="text-xs text-neutral-800 pl-4 my-2"
+                    key={comment.id}
+                  >
+                    {comment.comment}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
           {/* <div className="act-det-map">
             <div>map</div>
         </div> */}
           {expand && (
-            <div className="edit-activity-section">
-              <form
-                className="edit-activity-form"
-                onSubmit={handleActivityEdit}
-              >
-                <label className="form-label">Title</label>
-                <input
-                  className="form-input"
-                  type="text"
-                  placeholder={activity.title}
-                  value={updateTitle}
-                  onChange={(e) => setUpdateTitle(e.target.value)}
-                ></input>
-                <label className="form-label">Description</label>
-                <textarea
-                  className="form-input"
-                  type="textbox"
-                  placeholder={activity.description}
-                  value={updateDescription}
-                  onChange={(e) => setUpdateDescription(e.target.value)}
-                ></textarea>
-                <label className="form-label">Sport</label>
-                <select
-                  className="form-dropdown"
-                  onChange={(e) => {
-                    setUpdateSport(e.target.value);
-                  }}
-                >
-                  <option value={activity.sport}>{activity.sport}</option>
-                  {sports?.map((sport) => {
-                    return (
-                      <option key={sport} value={updateSport.text}>
-                        {sport}
+            <div className="p-4 border-x border-b border-zinc-200">
+              <form className="" onSubmit={handleActivityEdit}>
+                <div className="flex">
+                  <div className="mr-8">
+                    <label className="text-xs text-neutral-800">Title</label>
+                    <br></br>
+                    <input
+                      className="mt-1 h-8 border border-zinc-200 text-stone-500 text-sm pl-2"
+                      type="text"
+                      placeholder={activity.title}
+                      value={updateTitle}
+                      onChange={(e) => setUpdateTitle(e.target.value)}
+                    ></input>
+                  </div>
+                  <div className="mr-8">
+                    <label className="text-xs text-neutral-800">
+                      Description
+                    </label>
+                    <br></br>
+                    <textarea
+                      className="text-sm text-stone-500 border-zinc-200 border p-2 resize-y"
+                      type="textbox"
+                      placeholder={activity.description}
+                      value={updateDescription}
+                      onChange={(e) => setUpdateDescription(e.target.value)}
+                    ></textarea>
+                  </div>
+                  <div className="mr-8">
+                    <label className="text-xs text-neutral-800">Sport</label>
+                    <br></br>
+                    <select
+                      className="mt-1 h-8 border-r border border-zinc-200 pl-1 text-neutral-800"
+                      onChange={(e) => {
+                        setUpdateSport(e.target.value);
+                      }}
+                    >
+                      <option
+                        className="text-sm text-neutral-800"
+                        value={activity.sport}
+                      >
+                        {activity.sport}
                       </option>
-                    );
-                  })}
-                </select>
-                <button type="submit">Save</button>
-                <button
-                  onClick={(e) => {
-                    expandForm();
-                  }}
-                >
-                  Cancel
-                </button>
+                      {sports?.map((sport) => {
+                        return (
+                          <option
+                            className="text-sm text-neutral-800"
+                            key={sport}
+                            value={updateSport.text}
+                          >
+                            {sport}
+                          </option>
+                        );
+                      })}
+                    </select>
+                  </div>
+                </div>
+                <br></br>
+                <div className="">
+                  <button
+                    className="text-sm font-bold text-white bg-orange-600 rounded p-2"
+                    type="submit"
+                  >
+                    Save
+                  </button>
+                  <button
+                    className="text-sky-600 pl-4"
+                    onClick={(e) => {
+                      expandForm();
+                    }}
+                  >
+                    Cancel
+                  </button>
+                </div>
               </form>
             </div>
           )}
