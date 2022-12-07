@@ -6,6 +6,7 @@ import strava from "../pics/strava.png";
 function NavBar({ currentUser, updateUser }) {
   const [isLoading, setIsLoading] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [button, setButton] = useState(false);
 
   const history = useHistory();
 
@@ -26,6 +27,12 @@ function NavBar({ currentUser, updateUser }) {
   function handleDropdown() {
     setDropdown((prev) => !prev);
   }
+
+  function handleButton() {
+    setButton((prev) => !prev);
+  }
+
+  console.log(button);
 
   return (
     <header
@@ -135,11 +142,15 @@ function NavBar({ currentUser, updateUser }) {
               </NavLink>
             </div>
             <div className="mx-40"></div>
-            <button className="ml-96 h-8 mt-3 rounded px-3 font-bold text-xs text-white bg-orange-600">
-              <NavLink className="" to="/login">
-                {" "}
-                Log In{" "}
-              </NavLink>
+            <button
+              className="ml-96 h-8 mt-3 rounded px-3 font-bold text-xs text-white bg-orange-600"
+              onClick={handleButton}
+            >
+              {button ? (
+                <NavLink to="/signup">Sign Up</NavLink>
+              ) : (
+                <NavLink to="/login">Log In</NavLink>
+              )}
             </button>
           </div>
         )}

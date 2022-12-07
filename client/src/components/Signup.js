@@ -53,7 +53,7 @@ function Signup({ updateUser }) {
   return (
     <div className="py-32 px-96 text-center">
       <div>
-        <div className="mx-96 p-4 bg-black bg-opacity-80 text-4xl text-white">
+        <div className="mx-96 p-4 bg-black bg-opacity-80 font-bold text-4xl text-white">
           Join Strava today, it's Free.
         </div>
         <form className="mx-96 p-4 bg-black bg-opacity-70" onSubmit={onSubmit}>
