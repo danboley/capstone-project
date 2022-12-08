@@ -46,11 +46,14 @@ function AllActivityCard({ activity, comments }) {
     return moment(time).format("h:mm a");
   }
 
+  
   // Duration ...
   let duration = activity.duration;
   function newDuration(duration) {
-    if (duration.slice(0, 2) == 0) {
+    if (duration?.slice(0, 2) == 0) {
       return duration?.slice(4);
+    } else if (duration?.slice(0, 1) == 0) {
+      return duration?.slice(1)
     } else {
       return duration;
     }

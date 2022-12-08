@@ -26,10 +26,12 @@ function ProfileActivityCard({ currentUser, activity, comments }) {
     // Duration ...
   let duration = (activity.duration)
   function newDuration(duration) {
-    if (0 == duration.slice(0,2)) {
-      return duration?.slice(4)
+    if (duration?.slice(0, 2) == 0) {
+      return duration?.slice(4);
+    } else if (duration?.slice(0, 1) == 0) {
+      return duration?.slice(1)
     } else {
-      return duration
+      return duration;
     }
   }
 

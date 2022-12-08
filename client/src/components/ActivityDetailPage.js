@@ -151,6 +151,17 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
     }
   }
 
+    // Duration ...
+    function newDuration(duration) {
+      if (duration?.slice(0, 2) == 0) {
+        return duration?.slice(4);
+      } else if (duration?.slice(0, 1) == 0) {
+        return duration?.slice(1)
+      } else {
+        return duration;
+      }
+    }
+
   return (
     <div className="pt-14 mt-8 mb-9 pl-48 max-w-full flex bg-white">
       <div className="flex ml-32">
@@ -268,7 +279,7 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
                 </div>
                 <div className="pr-8">
                   <div>
-                    <div className="text-3xl font-light">{duration}</div>
+                    <div className="text-3xl font-light">{newDuration(duration)}</div>
                   </div>
                   <div>
                     <div className="text-xs text-zinc-500">Elapsed Time</div>
@@ -300,7 +311,7 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
                   </div>
                   <div className="flex gap-16">
                     <div>Moving Time</div>
-                    <div className="font-bold pl-2">{duration}</div>
+                    <div className="font-bold pl-2">{newDuration(duration)}</div>
                   </div>
                 </div>
               </div>

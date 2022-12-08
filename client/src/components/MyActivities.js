@@ -18,7 +18,7 @@ function MyActivities({ currentUser, activities, deleteActivity }) {
   });
 
   return (
-    <div className="pt-16 px-80 pb-12 bg-white">
+    <div className="pt-16 px-96 pb-12 bg-white">
       <div>
       <h1 className="flex text-4xl font-bold leading-10 mt-6">
         My Activities
@@ -31,7 +31,7 @@ function MyActivities({ currentUser, activities, deleteActivity }) {
           <table>
             <thead className="border-zinc-300 border-b-2 bg-gray-100">
               <tr className="table-row text-xs">
-                <th className="table-cell p-2 text-left">Sport</th>
+                <th className="table-cell p-2 text-center">Sport</th>
                 <th className="table-cell px-4 py-2 text-center">Date</th>
                 <th className="table-cell px-4 py-2 text-center">Title</th>
                 <th className="table-cell px-4 py-2 text-center">Time</th>
