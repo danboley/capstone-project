@@ -91,9 +91,8 @@ function UserProfilePage() {
             <div className="text-sm px-1 pb-4">{athlete.location}</div>
           </div>
           <div className="text-base font-bold px-4">
-            <h2>
-              Activities for {mmOld} {ddOld}, {yyyyOld} - {mm} {dd}, {yyyy}
-            </h2>
+            {/* <div>Activities for {mmOld} {ddOld}, {yyyyOld} - {mm} {dd}, {yyyy}</div> */}
+            <div>Recent Activities</div>
           </div>
           <div className="px-4 pt-4">{athleteActivities}</div>
         </div>
