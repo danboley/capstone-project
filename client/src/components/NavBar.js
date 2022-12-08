@@ -38,7 +38,7 @@ function NavBar({ currentUser, updateUser }) {
       id="global-header"
       className="fixed top-0 left-0 right-0  bg-gray-100 h-14 leading-4 text-sm z-10"
     >
-      <div className="h-14 relative border-b bg-white border-gray-100 px-72">
+      <div className="h-14 relative bg-white border-gray-100 px-72 border-b-2">
         {currentUser ? (
           <div className="">
             <div className="ml-5 float-left relative h-14 flex">
@@ -51,25 +51,57 @@ function NavBar({ currentUser, updateUser }) {
                   ></img>
                 </NavLink>
               </div>
-              <div className="flex mt-3 ml-3"><img className="w-6 h-6" src={mag}></img></div>
+              <div className="flex mt-3 ml-3">
+                <img className="w-6 h-6 cursor-pointer" src={mag}></img>
+              </div>
               <div className="flex">
-                <div className="flex px-4 justify-center">
+                <div className="flex px-4 justify-center focus-within:border-b-orange-600 border-gray-100 border-b-2">
                   <NavLink
-                    className="h-full text-neutral-600 focus:text-black hover:text-orange-600 pr-1 m-4"
+                    className="h-full text-neutral-600 focus:text-black hover:text-orange-600 pr-1 my-4"
                     to="/dashboard"
                   >
                     {" "}
                     Dashboard{" "}
                   </NavLink>
+                  <img
+                    className=" text-neutral-600 hover:text-orange-600 focus:text-black mx-2 my-5 h-3"
+                    src={arrow}
+                  ></img>
                 </div>
-                <div className="flex justify-center">
+                <div className="flex justify-center focus-within:border-b-orange-600 border-gray-100 border-b-2">
                   <NavLink
-                    className="h-full text-neutral-600 focus:text-black hover:text-orange-600 pr-1 m-4"
+                    className="h-full text-neutral-600 focus:text-black hover:text-orange-600 pr-1 my-4"
                     to="/myactivities"
                   >
                     {" "}
-                    My Activities{" "}
+                    Training{" "}
                   </NavLink>
+                  <img
+                    className=" text-neutral-600 hover:text-orange-600 focus:text-black mx-2 my-5 h-3"
+                    src={arrow}
+                  ></img>
+                </div>
+                <div className="flex justify-center">
+                  <div
+                    className="ml-8 h-full text-neutral-600 focus:text-black hover:text-orange-600 pr-1 my-4 cursor-pointer "
+                    to="/myactivities"
+                  >
+                    {" "}
+                    Explore{" "}
+                  </div>
+                  <img
+                    className=" text-neutral-600 hover:text-orange-600 focus:text-black mx-2 my-5 h-3"
+                    src={arrow}
+                  ></img>
+                </div>
+                <div className="flex justify-center">
+                  <div
+                    className="ml-6 h-full text-neutral-600 focus:text-black hover:text-orange-600 my-4 cursor-pointer"
+                    to="/myactivities"
+                  >
+                    {" "}
+                    Challenges{" "}
+                  </div>
                 </div>
               </div>
             </div>
@@ -86,7 +118,7 @@ function NavBar({ currentUser, updateUser }) {
                 </NavLink>
                 <div>
                   <img
-                    className=" text-neutral-600 hover:text-orange-600 focus:text-black pr-1 px-2 ml-1 my-6 h-3"
+                    className=" text-neutral-600 hover:text-orange-600 focus:text-black px-2 ml-1 my-6 h-3"
                     onClick={handleDropdown}
                     src={arrow}
                   ></img>
