@@ -32,8 +32,6 @@ function NavBar({ currentUser, updateUser }) {
     setButton((prev) => !prev);
   }
 
-  console.log(button);
-
   return (
     <header
       id="global-header"

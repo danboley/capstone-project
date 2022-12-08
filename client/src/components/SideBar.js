@@ -1,13 +1,20 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import sub from "../pics/sub.png";
+import moment from "moment";
 
 function SideBar({ currentUser }) {
-  // variables for latest activity info
-  // const activitiesByDate = currentUser?.activities?.slice().sort(function(a, b) {
-  //   return new Date(b.date) - new Date(a.date);
-  // })
-  // const latestActivity = activitiesByDate?.slice(0,1)
+  // latest activity ...
+  const activitiesByDate = currentUser?.activities
+    ?.slice()
+    .sort(function (a, b) {
+      return new Date(b.date) - new Date(a.date);
+    });
+  const latestActivity = activitiesByDate?.slice(0, 1)[0];
+  const latestActivityTitle = latestActivity?.title;
+  const latestActivityDate = moment(latestActivity?.date).format(
+    "MMMM, D YYYY"
+  );
 
   return (
     <div className="fixed rounded mt-16 pt-6 w-72 h-72 px-20 bg-white">
@@ -55,15 +62,14 @@ function SideBar({ currentUser }) {
           </NavLink>
         </div>
       </div>
-      <div className="-ml-12">
+      <div className="-ml-16">
         <div className="mt-4 pt-4">
           <div className="text-xs left-8">Latest Activity</div>
-          <div className="flex pt-2 gap-1 text-black hover:text-orange-600 cursor-pointer">
-            <div className="font-bold text-base">Title</div>
-            {/* <div>{latestActivity[0]?.title}</div> */}
-            <div>•</div>
-            <div className="text-sm leading-6">Date</div>
-            {/* <div>{latestActivity[0]?.date}</div> */}
+          <div className="pt-2 gap-1 text-black hover:text-orange-600 cursor-pointer">
+            <div className="text-sm">
+              {latestActivityTitle} • {latestActivityDate}
+            </div>
+            <div></div>
           </div>
         </div>
       </div>

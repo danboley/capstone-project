@@ -11,6 +11,7 @@ function ActivityForm({ currentUser, addActivity }) {
   const [activityElevation, setActivityElevation] = useState("");
   const [activityDescription, setActivityDescription] = useState("");
   const [activityLocation, setActivityLocation] = useState("");
+  const [activityImage, setActivityImage] = useState("");
   // const [activityMap, setActivityMap] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -79,6 +80,7 @@ function ActivityForm({ currentUser, addActivity }) {
           elevation: parseInt(activityElevation),
           description: activityDescription,
           location: activityLocation,
+          image: activityImage,
           // map: activityMap,
         }),
       }).then((r) => {
@@ -89,6 +91,7 @@ function ActivityForm({ currentUser, addActivity }) {
             // console.log(currentUser?.activities?.slice(-1)[0].id)
             // history.push(`/activities/${currentUser?.activities?.slice(-1)[0].id}`);
             // window.location.reload();
+            history.push("/myactivities")
           });
         } else {
           r.json().then((err) => setErrors(err.errors));
@@ -123,7 +126,7 @@ function ActivityForm({ currentUser, addActivity }) {
                 <br></br>
                 <input
                   className="mt-1 h-9 border border-zinc-200 text-center text-stone-500"
-                  type="text"
+                  type="number"
                   value={activityDistance}
                   onChange={(e) => setActivityDistance(e.target.value)}
                 />
@@ -150,7 +153,7 @@ function ActivityForm({ currentUser, addActivity }) {
                 <br></br>
                 <input
                   className="mt-1 h-9 border border-zinc-200 text-center text-stone-500"
-                  type="text"
+                  type="number"
                   value={activityElevation}
                   onChange={(e) => setActivityElevation(e.target.value)}
                 ></input>
@@ -246,8 +249,8 @@ function ActivityForm({ currentUser, addActivity }) {
                 <input
                   className="mt-1 h-9 w-64 border border-zinc-200 text-stone-500 pl-2"
                   type="text"
-                  // value={activityPhoto}
-                  // onChange={(e) => setActivityPhoto(e.target.value)}
+                  value={activityImage}
+                  onChange={(e) => setActivityImage(e.target.value)}
                 ></input>
               </div>
             </div>

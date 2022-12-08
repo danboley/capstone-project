@@ -28,14 +28,25 @@ function MyProfile({ currentUser, activities }) {
   let mmOld = weekAgo.toLocaleString('default', { month: 'short' });
   let ddOld = weekAgo.getDate();
 
+
+  const profileImages = activitiesByDate?.slice(0, 4).map((activity) => {
+    if (activity.image) {
+    return (
+      <div key={activity.id}><img className="border-r border-white w-80 h-80" src={activity.image}></img></div>
+    )} else {
+      return (<div key={activity.id}>
+        <img
+          className="border-r border-white w-80 h-80"
+          src="https://media.istockphoto.com/id/936182806/vector/no-image-available-sign.jpg?s=612x612&w=0&k=20&c=9HTEtmbZ6R59xewqyIQsI_pQl3W3QDJgnxFPIHb4wQE="
+        ></img>
+      </div>)}
+  })
+
   return (
     <div className="pt-14 max-w-full flex justify-center">
       <div className="w-4/6">
         <div className="flex">
-          <div className=""><img className="border-r border-white w-80 h-80" src={currentUser.pro_pic}></img></div>
-          <div className=""><img className="border-r border-white w-80 h-80" src={currentUser.pro_pic}></img></div>
-          <div className=""><img className="border-r border-white w-80 h-80" src={currentUser.pro_pic}></img></div>
-          <div className=""><img className="w-80 h-80" src={currentUser.pro_pic}></img></div>
+          {profileImages}
         </div>
         <div className="relative -top-16">
           <div className="px-8 pb-4">

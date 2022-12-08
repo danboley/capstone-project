@@ -33,6 +33,16 @@ function ProfileActivityCard({ currentUser, activity, comments }) {
     }
   }
 
+  // Image...
+  let image = activity.image;
+  function activityImage() {
+    if (image) {
+      return <img className="pl-16 w-64 h-63 pt-2 mt-4" src={image}></img>;
+    } else {
+      return null;
+    }
+  }
+
   return (
 <div className="p-6 m-4 rounded max-w-3xl min-w-3xl bg-white">
       <div className="pb-6 border-gray-100 border-b">
@@ -77,7 +87,10 @@ function ProfileActivityCard({ currentUser, activity, comments }) {
               {} /mi
           </div> */}
       </div>
-      {/* <div>{activity.map}</div> */}
+      <div className="flex gap-2">
+          <div>{activityImage()}</div>
+          {/* <div>{activity.map}</div> */}
+        </div>
       </div>
       <div className="">
         {comments?.map((comment) => <div className="text-xs text-neutral-800 pt-2 pl-8 mt-4" key={comment.id}>{comment?.user?.name} {comment.comment}</div>)}

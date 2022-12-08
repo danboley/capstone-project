@@ -5,7 +5,7 @@ import SideBar from './SideBar';
 function Dashboard({ currentUser, activities }) {
 
   return (
-    <div className="mt-14 mx-72 bg-gray-100">
+    <div className="mt-14 mx-96 bg-gray-100">
       <div>
         <SideBar currentUser={currentUser} />
         <AllActivities currentUser={currentUser} activities={activities} />

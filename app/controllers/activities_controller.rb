@@ -28,7 +28,7 @@ class ActivitiesController < ApplicationController
   end
 
   def act_params
-    params.permit(:title, :date, :time, :distance, :duration, :sport, :elevation, :description, :location, :user_id)
+    params.permit(:title, :date, :time, :distance, :duration, :sport, :elevation, :description, :location,:image, :user_id)
     # add map functionality below
     # params.permit(:map, :title, :date, :time, :distance, :duration, :sport, :elevation, :description, :location, :user_id)
   end

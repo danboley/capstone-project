@@ -33,6 +33,7 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
     elevation,
     description,
     location,
+    image,
     user,
     comments,
   } = activity;
@@ -219,7 +220,7 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
             </div>
             <div className=""> - </div>
             <div className="">{sport}</div>
-            <div className="ml-96 mr-4">
+            <div className="ml-96 mr-4 order-last float-right">
               <button
                 className="ml-40 text-xs border p-1 hover:bg-white"
                 onClick={expandComments}
@@ -230,18 +231,6 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
           </div>
 
           <div className="flex p-4 border-zinc-200 border">
-            {/* <div className="flex pr-96 border-zinc-200 border-b-2 pb-4 gap-2 text-xl bg-red-500">
-              {!user?.subscriber ? <img className="w-6 h-6 mr-2" src={sub}></img> : null}
-              <div
-                onClick={(e) => {
-                  history.push(`/athletes/${user.id}`);
-                }}
-              >
-                {user?.first_name} {user?.last_name}
-              </div>
-              <div> - </div>
-              <div>{sport}</div>
-            </div> */}
             <div className="flex pt-4 pr-24 pb-8 act-det-left border-zinc-200 border-r">
               <div className="flex">
                 <img
@@ -261,7 +250,8 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
                   <h3>{description}</h3>
                 </div>
                 <div className="pl-4 pt-6">
-                  <img className="w-16 h-16" src={user?.pro_pic}></img>
+                  { image ? 
+                  <img className="w-16 h-16" src={image}></img> : null}
                 </div>
               </div>
             </div>
