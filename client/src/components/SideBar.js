@@ -1,17 +1,18 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import sub from "../pics/sub.png";
 import moment from "moment";
 
 function SideBar({ currentUser }) {
+  const history = useHistory();
+
   // latest activity ...
-  const activitiesByDate = currentUser?.activities
-    ?.slice()
-    .sort(function (a, b) {
+  const activitiesByDate = currentUser?.activities?.slice().sort(function (a, b) {
       return new Date(b.date) - new Date(a.date);
     });
   const latestActivity = activitiesByDate?.slice(0, 1)[0];
-  const latestActivityTitle = latestActivity?.title;
+  const latestActivityId = (latestActivity?.id)
+  const latestActivityTitle = (latestActivity?.title);
   const latestActivityDate = moment(latestActivity?.date).format(
     "MMMM, D YYYY"
   );
@@ -66,7 +67,7 @@ function SideBar({ currentUser }) {
         <div className="mt-4 pt-4">
           <div className="text-xs left-8">Latest Activity</div>
           <div className="pt-2 gap-1 text-black hover:text-orange-600 cursor-pointer">
-            <div className="text-sm">
+            <div className="text-sm" onClick={(e) => {history.push(`/activities/${latestActivityId}`)}}>
               {latestActivityTitle} • {latestActivityDate}
             </div>
             <div></div>

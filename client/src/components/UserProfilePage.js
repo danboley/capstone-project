@@ -56,11 +56,7 @@ function UserProfilePage() {
         </div>
       );
     } else {
-      return (<div key={activity.id}>
-        <div
-          className=" w-80 h-80"
-        ></div>
-      </div>);
+      null;
     }
   });
 
