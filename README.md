@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Strava clone for Flatiron School capstone project.
 
-Things you may want to cover:
+Initial functionality:
 
-* Ruby version
+- Create new account with authentication/authorization
 
-* System dependencies
+- Log in/out of existing account
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Full CRUD for activities

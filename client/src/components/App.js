@@ -72,6 +72,11 @@ function App() {
       <div className="bg-gray-100 selection:text-white selection:bg-orange-600">
         <NavBar currentUser={currentUser} updateUser={updateUser} />
         <Switch>
+          {currentUser ? (
+            <Route exact path="/" component={Dashboard} />
+          ) : (
+            <Route exact path="/" component={Login} />
+          )}
           <Route path="/signup" updateUser={updateUser}>
             <Signup />
           </Route>
