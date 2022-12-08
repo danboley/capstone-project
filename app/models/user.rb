@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :activities
-  has_many :comments, through: :activities
+  has_many :activities, dependent: :destroy
+  has_many :comments, through: :activities, dependent: :destroy
 
 #   has_many :follows
 
