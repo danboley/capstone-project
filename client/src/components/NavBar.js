@@ -3,6 +3,7 @@ import { NavLink, useHistory } from "react-router-dom";
 import arrow from "../pics/arrow.png";
 import strava from "../pics/strava.png";
 import mag from "../pics/mag.png";
+import bell from "../pics/bell.png";
 
 function NavBar({ currentUser, updateUser }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -107,6 +108,9 @@ function NavBar({ currentUser, updateUser }) {
             </div>
             <div className="h-14 float-right">
               <div className="flex float-right">
+              <div className="flex mt-3 ml-3">
+                <img className="w-5 h-5 mt-1 mr-8 cursor-pointer" src={bell}></img>
+              </div>
                 <NavLink
                   className="h-full text-neutral-600 hover:text-orange-600"
                   to="/myprofile"

@@ -79,7 +79,7 @@ function Login({ updateUser }) {
         <div className="bg-black bg-opacity-70 pt-2">
           <div className="">
             {isLoading ? (
-              <div className="text-white text-sm ">"Loading..."</div>
+              <div className="text-white text-sm ">Loading...</div>
             ) : null}
             {errors ? <div className="text-white text-sm  text-center">{errors}</div> : null}
           </div>
