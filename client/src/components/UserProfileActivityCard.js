@@ -51,7 +51,6 @@ function UserProfileActivityCard({ athlete, activity, comments }) {
 
   // Activity Icon ...
   let sport = (activity.sport)
-  console.log(sport)
   function activityIcon() {
     if (sport == "Run") {
       return <img className="ml-1 w-10 h-7" src={run}></img>
