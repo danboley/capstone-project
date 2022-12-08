@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import arrow from "../pics/arrow.png";
 import strava from "../pics/strava.png";
+import mag from "../pics/mag.png";
 
 function NavBar({ currentUser, updateUser }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -50,10 +51,11 @@ function NavBar({ currentUser, updateUser }) {
                   ></img>
                 </NavLink>
               </div>
+              <div className="flex mt-3 ml-3"><img className="w-6 h-6" src={mag}></img></div>
               <div className="flex">
                 <div className="flex px-4 justify-center">
                   <NavLink
-                    className="h-full text-neutral-600 focus:text-black hover:text-orange-600 pr-1 m-5"
+                    className="h-full text-neutral-600 focus:text-black hover:text-orange-600 pr-1 m-4"
                     to="/dashboard"
                   >
                     {" "}
@@ -62,7 +64,7 @@ function NavBar({ currentUser, updateUser }) {
                 </div>
                 <div className="flex justify-center">
                   <NavLink
-                    className="h-full text-neutral-600 focus:text-black hover:text-orange-600 pr-1 m-5"
+                    className="h-full text-neutral-600 focus:text-black hover:text-orange-600 pr-1 m-4"
                     to="/myactivities"
                   >
                     {" "}
@@ -84,12 +86,12 @@ function NavBar({ currentUser, updateUser }) {
                 </NavLink>
                 <div>
                   <img
-                    className=" text-neutral-600 hover:text-orange-600 focus:text-black pr-1 px-2 ml-1 my-5 h-3"
+                    className=" text-neutral-600 hover:text-orange-600 focus:text-black pr-1 px-2 ml-1 my-6 h-3"
                     onClick={handleDropdown}
                     src={arrow}
                   ></img>
                   {dropdown ? (
-                    <div className="pt-1">
+                    <div className="-mt-1">
                       <div className="py-3 px-4 bg-white border-solid border-gray-100 border-x-2 border-t hover:bg-slate-50">
                         <NavLink
                           className="h-full text-neutral-600 hover:text-orange-600"

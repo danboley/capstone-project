@@ -3,6 +3,11 @@ import { useHistory } from "react-router-dom";
 import moment from "moment";
 import sub from "../pics/sub.png";
 import arrow from "../pics/arrow.png";
+import run from "../pics/run.png";
+import bike from "../pics/bike.png";
+import swim from "../pics/swim.png";
+import workout from "../pics/workout.png";
+
 
 function AllActivityCard({ activity, comments }) {
   const history = useHistory();
@@ -69,6 +74,20 @@ function AllActivityCard({ activity, comments }) {
     }
   }
 
+  // Activity Icon ...
+  let sport = (activity.sport)
+  function activityIcon() {
+    if (sport == "Run") {
+      return <img className="ml-1 w-10 h-7" src={run}></img>
+    } else if (sport == "Ride") {
+      return <img className="ml-1 w-8 h-6" src={bike}></img>
+    } else if (sport == "Swim") {
+      return <img className="ml-1 w-9 h-7" src={swim}></img>
+    } else {
+      return <img className="ml-2 mt-1 w-8 h-6" src={workout}></img>
+    }
+  }
+
   return (
     <div className="p-6 m-4 rounded max-w-xl min-w-xl bg-white">
       <div className="pb-6 border-gray-100 border-b">
@@ -103,7 +122,7 @@ function AllActivityCard({ activity, comments }) {
           </div>
         </div>
         <div className="pt-4">
-          <div className="float-left text-xs">{activity.sport}</div>
+          <div className="float-left text-xs">{activityIcon(sport)}</div>
           <div
             className="pl-16 font-bold text-xl hover:text-sky-600 cursor-pointer"
             onClick={(e) => {
