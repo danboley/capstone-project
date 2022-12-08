@@ -34,7 +34,7 @@ function MyProfile({ currentUser, activities }) {
     return (
       <div key={activity.id}><img className="border-r border-white w-80 h-80 object-cover" src={activity.image}></img></div>
     )} else {
-      null;
+      return (null);
     }
   })
 

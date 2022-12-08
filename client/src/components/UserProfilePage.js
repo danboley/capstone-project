@@ -56,7 +56,7 @@ function UserProfilePage() {
         </div>
       );
     } else {
-      null;
+      return (null);
     }
   });
 

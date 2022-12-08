@@ -70,7 +70,7 @@ function AllActivityCard({ activity, comments }) {
     if (image) {
       return <img className="pl-16 w-64 h-63 pt-2 mt-4 object-cover" src={image}></img>;
     } else {
-      return null;
+      return (null);
     }
   }
 
