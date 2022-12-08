@@ -51,12 +51,12 @@ function Signup({ updateUser }) {
   }
 
   return (
-    <div className="py-32 px-96 text-center">
-      <div>
-        <div className="mx-96 p-4 bg-black bg-opacity-80 font-bold text-4xl text-white">
+    <div className="py-32 mx-96 content-center text-center block">
+      <div className="w-96 mx-96">
+        <div className="p-4 bg-black bg-opacity-80 font-bold text-4xl text-white">
           Join Strava today, it's Free.
         </div>
-        <form className="mx-96 p-4 bg-black bg-opacity-70" onSubmit={onSubmit}>
+        <form className="p-4 bg-black bg-opacity-70" onSubmit={onSubmit}>
           <input
             className="border-stone-500 h-11 w-72 border rounded text-center text-sm"
             type="text"
@@ -107,7 +107,6 @@ function Signup({ updateUser }) {
           />
           <br></br>
           <br></br>
-          {/* <label className="text-white mr-2"> Account Type: </label> */}
           <select
             className="rounded h-11 w-72 text-center"
             name="subscription"
@@ -138,15 +137,15 @@ function Signup({ updateUser }) {
           </button>
           <br></br>
         </form>
-        <div className="bg-black bg-opacity-70 mx-96 pt-2">
-          <div>
+        <div className="bg-black bg-opacity-70 pt-2">
+          <div className="">
             {isLoading ? (
-              <div className="text-white text-sm">"Loading..."</div>
+              <div className="text-white text-sm ">"Loading..."</div>
             ) : null}
-            {errors ? <div className="text-white text-sm">{errors}</div> : null}
+            {errors ? <div className="text-white text-sm  text-center">{errors}</div> : null}
           </div>
         </div>
-        <div className=" text-white text-sm mx-96 p-4 bg-black bg-opacity-70 text-center">
+        <div className=" text-white text-sm p-4 bg-black bg-opacity-70 text-center">
           <div className="flex gap-2 justify-center items-center pb-4">
             <div> Already a Member? </div>
             <button onClick={loginPush}> Log In </button>

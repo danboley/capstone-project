@@ -40,13 +40,12 @@ function Login({ updateUser }) {
   }
 
   return (
-    <div className="py-32 px-96 text-center">
-      <div className="">
-        <div className="mx-96 p-4 bg-black bg-opacity-80 font-bold text-4xl text-white">
+    <div className="py-32 mx-96 content-center text-center block">
+      <div className="w-96 mx-96">
+        <div className="p-4 bg-black bg-opacity-80 font-bold text-4xl text-white">
           Log In
         </div>
-
-        <form className="mx-96 p-4 bg-black bg-opacity-70" onSubmit={onSubmit}>
+        <form className="p-4 bg-black bg-opacity-70" onSubmit={onSubmit}>
           <br></br>
           <div className="text-white text-base mb-4">Log in with email</div>
           <input
@@ -77,15 +76,15 @@ function Login({ updateUser }) {
           </button>
           <br></br>
         </form>
-        <div className="bg-black bg-opacity-70 mx-96 pt-2">
-          <div>
+        <div className="bg-black bg-opacity-70 pt-2">
+          <div className="">
             {isLoading ? (
-              <div className="text-white text-sm">"Loading..."</div>
+              <div className="text-white text-sm ">"Loading..."</div>
             ) : null}
-            {errors ? <div className="text-white text-sm">{errors}</div> : null}
+            {errors ? <div className="text-white text-sm  text-center">{errors}</div> : null}
           </div>
         </div>
-        <div className=" text-white text-sm mx-96 p-4 bg-black bg-opacity-70 text-center">
+        <div className=" text-white text-sm p-4 bg-black bg-opacity-70 text-center">
           <div className="flex gap-2 justify-center items-center pb-4">
             <div> New User? </div>
             <button onClick={signupPush}> Sign Up </button>
