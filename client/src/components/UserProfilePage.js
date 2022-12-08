@@ -50,17 +50,16 @@ function UserProfilePage() {
       return (
         <div key={activity.id}>
           <img
-            className="border-r border-white w-80 h-80"
+            className="border-r border-white w-80 h-80 object-cover"
             src={activity.image}
           ></img>
         </div>
       );
     } else {
       return (<div key={activity.id}>
-        <img
-          className="border-r border-white w-80 h-80"
-          src="https://media.istockphoto.com/id/936182806/vector/no-image-available-sign.jpg?s=612x612&w=0&k=20&c=9HTEtmbZ6R59xewqyIQsI_pQl3W3QDJgnxFPIHb4wQE="
-        ></img>
+        <div
+          className=" w-80 h-80"
+        ></div>
       </div>);
     }
   });
@@ -72,7 +71,7 @@ function UserProfilePage() {
         <div className="relative -top-16">
           <div className="px-8 pb-4">
             <img
-              className="rounded-full border border-slate-50 w-32 h-32"
+              className="rounded-full border border-slate-50 w-32 h-32 object-cover"
               src={athlete.pro_pic}
             ></img>
           </div>

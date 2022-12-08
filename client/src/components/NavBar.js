@@ -112,7 +112,7 @@ function NavBar({ currentUser, updateUser }) {
                   to="/myprofile"
                 >
                   <img
-                    className="rounded-full h-8 w-8 mt-3"
+                    className="rounded-full h-8 w-8 mt-3 object-cover"
                     src={currentUser.pro_pic}
                   ></img>
                 </NavLink>

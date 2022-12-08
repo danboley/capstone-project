@@ -21,7 +21,7 @@ function SideBar({ currentUser }) {
       <div className="fixed top-20">
         <NavLink to="/myprofile">
           <img
-            className="rounded-full mt-1 ml-8 h-16 w-16"
+            className="rounded-full mt-1 ml-8 h-16 w-16 object-cover"
             src={currentUser.pro_pic}
           ></img>
         </NavLink>

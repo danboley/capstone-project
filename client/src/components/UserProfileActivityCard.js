@@ -43,7 +43,7 @@ function UserProfileActivityCard({ athlete, activity, comments }) {
   let image = activity.image;
   function activityImage() {
     if (image) {
-      return <img className="pl-16 w-64 h-63 pt-2 mt-4" src={image}></img>;
+      return <img className="pl-16 w-64 h-63 pt-2 mt-4 object-cover" src={image}></img>;
     } else {
       return null;
     }
@@ -71,7 +71,7 @@ function UserProfileActivityCard({ athlete, activity, comments }) {
           <div className="">
             <div className="float-left">
               <img
-                className="h-10 w-10 rounded-full float-left cursor-pointer"
+                className="h-10 w-10 rounded-full float-left cursor-pointer object-cover"
                 src={athlete.pro_pic}
                 onClick={(e) => {
                   history.push(`/athletes/${activity.user.id}`);

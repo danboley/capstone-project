@@ -245,7 +245,7 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
             <div className="flex pt-4 pr-24 pb-8 act-det-left border-zinc-200 border-r">
               <div className="flex">
                 <img
-                  className="h-24 w-24 rounded-full"
+                  className="h-24 w-24 rounded-full object-cover"
                   src={user?.pro_pic}
                 ></img>
               </div>
@@ -262,7 +262,7 @@ function ActivityDetailPage({ currentUser, editActivity, deleteActivity }) {
                 </div>
                 <div className="pl-4 pt-6">
                   { image ? 
-                  <img className="w-16 h-16" src={image}></img> : null}
+                  <img className="w-16 h-16 object-cover" src={image}></img> : null}
                 </div>
               </div>
             </div>
