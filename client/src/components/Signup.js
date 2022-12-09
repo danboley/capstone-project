@@ -114,8 +114,8 @@ function Signup({ updateUser }) {
             onChange={(e) => setSubscriber(e.target.value)}
           >
             <option>Account Type</option>
-            <option value="">Premium</option>
-            <option>Free</option>
+            <option>Premium</option>
+            <option value="">Free</option>
           </select>
           <br></br>
           <br></br>
