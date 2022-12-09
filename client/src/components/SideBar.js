@@ -27,7 +27,7 @@ function SideBar({ currentUser }) {
           ></img>
         </NavLink>
         {currentUser.subscriber ? (
-          <img className="w-6 h-6 fixed left-56 top-20" src={sub}></img>
+          <img className="w-6 h-6 fixed top-20 ml-20" src={sub}></img>
         ) : null}
       </div>
       <div className="justify-center text-2xl hover:text-sky-600 cursor-pointer mt-8 mb-4 leading-tight">
